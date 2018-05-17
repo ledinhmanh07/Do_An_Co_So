@@ -1,0 +1,7 @@
+﻿@model IEnumerable<HutechWork.Models.THANHPHO>
+<div class="input-group">
+    @foreach (var item in Model)
+    {
+        <option value="@item.MATHANHPHO">@item.TENTHANHPHO</option>
+    }
+</div>
