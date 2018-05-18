@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 13.625" name="dbQlHutechWork">
+  <DataContextMoniker Name="/dbQlHutechWorkDataContext" />
+  <nestedChildShapes>
+    <classShape Id="34a1c2b3-3f63-499f-9479-afaf5eca6983" absoluteBounds="9.25, 4.875, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/dbQlHutechWorkDataContext/HOSOXINVIEC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="07e267b6-d127-4ca0-afe0-4692ead6846c" absoluteBounds="9.265, 5.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="27474b8e-845c-4900-9491-a1077f41d799" absoluteBounds="3.5, 5.625, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/dbQlHutechWorkDataContext/THONGTINCANHAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="91eeb603-20c1-44dc-93f8-3b057b2b6e4a" absoluteBounds="3.515, 6.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ce07624-5604-42a5-a6f1-dc0f3da672f2" absoluteBounds="3.5, 12.125, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/dbQlHutechWorkDataContext/LUOTUNGTUYEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f61cd8f8-0f34-41e5-ac0e-76ed683511c7" absoluteBounds="3.515, 12.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1317ee88-e311-4256-9680-4cb131e3a567" absoluteBounds="6.25, 2.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/dbQlHutechWorkDataContext/NOPDON" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1df7126a-7b0b-47e0-8949-60e66fa2dfd5" absoluteBounds="6.265, 2.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1f7504bc-c063-4aea-906d-a44fc75ca9cc" absoluteBounds="0.75, 1.125, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/dbQlHutechWorkDataContext/NGANH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c39eb387-120b-458c-9686-8e69e81dbb2e" absoluteBounds="0.765, 1.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="58622749-2355-488e-94df-4aac36636a8b" absoluteBounds="6.5, 9.125, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/dbQlHutechWorkDataContext/NGOAINGU" />
+      <nestedChildShapes>
+        <elementListCompartment Id="08f947dd-7ec1-489a-a751-03b7cc153ec0" absoluteBounds="6.515, 9.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7957759-3259-450b-8433-7f5043cea20e" absoluteBounds="3.5, 0.75, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/dbQlHutechWorkDataContext/PHIEUDANGTUYEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c8aefd7-595c-49b5-b03c-33c9da730963" absoluteBounds="3.515, 1.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5436f1a1-3fdb-4751-a804-0c29f87c1ce0" absoluteBounds="3.5, 9.125, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/dbQlHutechWorkDataContext/TAIKHOAN_CN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5795daa6-18c0-43d0-9d06-5adf1286927c" absoluteBounds="3.515, 9.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="85d815be-3c1c-46c4-8fe2-11c257354f59" absoluteBounds="0.75, 3.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/dbQlHutechWorkDataContext/TAIKHOAN_DN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="01ed402b-496e-4ca0-86f0-a16d1a6d7967" absoluteBounds="0.765, 3.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d18af41e-174d-4f18-884e-ca916a163357" absoluteBounds="6.5, 5.625, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/dbQlHutechWorkDataContext/TTDOANHNGHIEP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f4472aa-07f3-42a9-bb88-6b2c48e84759" absoluteBounds="6.515, 6.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4aa724c2-35b3-4627-ab13-587e80345fea" absoluteBounds="0.75, 6.25, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/dbQlHutechWorkDataContext/THANHPHO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4918ed2c-f9aa-494e-8e1a-a4e151079701" absoluteBounds="0.765, 6.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.72199625651042); (3.25 : 1.72199625651042); (3.25 : 5.07851399739583); (4.12589743589744 : 5.07851399739583 : JumpStart); (4.2925641025641 : 5.07851399739583 : JumpEnd); (4.72128205128205 : 5.07851399739583 : JumpStart); (4.88794871794872 : 5.07851399739583 : JumpEnd); (5.79166666666667 : 5.07851399739583 : JumpStart); (5.95833333333333 : 5.07851399739583 : JumpEnd); (9 : 5.07851399739583); (9 : 4.625); (10.25 : 4.625); (10.25 : 4.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQlHutechWorkDataContext/NGANH/NGANH_HOSOXINVIEC" />
+      <nodes>
+        <classShapeMoniker Id="1f7504bc-c063-4aea-906d-a44fc75ca9cc" />
+        <classShapeMoniker Id="34a1c2b3-3f63-499f-9479-afaf5eca6983" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 9.81814697265625); (10.25 : 9.81814697265625); (10.25 : 6.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQlHutechWorkDataContext/NGOAINGU/NGOAINGU_HOSOXINVIEC" />
+      <nodes>
+        <classShapeMoniker Id="58622749-2355-488e-94df-4aac36636a8b" />
+        <classShapeMoniker Id="34a1c2b3-3f63-499f-9479-afaf5eca6983" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.81814697265625); (6.25 : 2.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQlHutechWorkDataContext/PHIEUDANGTUYEN/PHIEUDANGTUYEN_NOPDON" />
+      <nodes>
+        <classShapeMoniker Id="b7957759-3259-450b-8433-7f5043cea20e" />
+        <classShapeMoniker Id="1317ee88-e311-4256-9680-4cb131e3a567" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.36099812825521); (3.5 : 1.36099812825521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQlHutechWorkDataContext/NGANH/NGANH_PHIEUDANGTUYEN" />
+      <nodes>
+        <classShapeMoniker Id="1f7504bc-c063-4aea-906d-a44fc75ca9cc" />
+        <classShapeMoniker Id="b7957759-3259-450b-8433-7f5043cea20e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.20923076923077 : 4.82851399739583); (4.20923076923077 : 5.32851399739583); (4.80461538461539 : 5.32851399739583); (4.80461538461539 : 4.82851399739583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbQlHutechWorkDataContext/PHIEUDANGTUYEN/PHIEUDANGTUYEN_PHIEUDANGTUYEN" />
+      <nodes>
+        <classShapeMoniker Id="b7957759-3259-450b-8433-7f5043cea20e" />
+        <classShapeMoniker Id="b7957759-3259-450b-8433-7f5043cea20e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 9.14845935907452); (5.89845935907452 : 8.75); (9.718748 : 8.75); (9.718748 : 6.8381982421875)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQlHutechWorkDataContext/TAIKHOAN_CN/TAIKHOAN_CN_HOSOXINVIEC" />
+      <nodes>
+        <classShapeMoniker Id="5436f1a1-3fdb-4751-a804-0c29f87c1ce0" />
+        <classShapeMoniker Id="34a1c2b3-3f63-499f-9479-afaf5eca6983" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.4687475 : 9.125); (4.4687475 : 7.97280110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQlHutechWorkDataContext/TAIKHOAN_CN/TAIKHOAN_CN_THONGTINCANHAN" />
+      <nodes>
+        <classShapeMoniker Id="5436f1a1-3fdb-4751-a804-0c29f87c1ce0" />
+        <classShapeMoniker Id="27474b8e-845c-4900-9491-a1077f41d799" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.47760602088341 : 9.125); (5.875 : 8.72760602088341); (5.875 : 3.19597245898438); (6.25 : 3.19597245898438)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQlHutechWorkDataContext/TAIKHOAN_CN/TAIKHOAN_CN_NOPDON" />
+      <nodes>
+        <classShapeMoniker Id="5436f1a1-3fdb-4751-a804-0c29f87c1ce0" />
+        <classShapeMoniker Id="1317ee88-e311-4256-9680-4cb131e3a567" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.50276190564904); (3.15625 : 4.90901190564904); (3.15625 : 12.7219962565104); (3.5 : 12.7219962565104)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQlHutechWorkDataContext/TAIKHOAN_DN/TAIKHOAN_DN_LUOTUNGTUYEN" />
+      <nodes>
+        <classShapeMoniker Id="85d815be-3c1c-46c4-8fe2-11c257354f59" />
+        <classShapeMoniker Id="5ce07624-5604-42a5-a6f1-dc0f3da672f2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.78689447265625); (3.16666666666667 : 3.78689447265625 : JumpStart); (3.39583333333333 : 3.78689447265625 : JumpEnd); (3.5 : 3.78689447265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQlHutechWorkDataContext/TAIKHOAN_DN/TAIKHOAN_DN_PHIEUDANGTUYEN" />
+      <nodes>
+        <classShapeMoniker Id="85d815be-3c1c-46c4-8fe2-11c257354f59" />
+        <classShapeMoniker Id="b7957759-3259-450b-8433-7f5043cea20e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.48783258623798); (3.19107443490112 : 4.9289070211391 : JumpStart); (3.37142556509888 : 5.10925815133686 : JumpEnd); (3.375 : 5.11283258623798); (3.375 : 5.25); (5.79166666666667 : 5.25 : JumpStart); (5.95833333333333 : 5.25 : JumpEnd); (6.125 : 5.25); (6.5 : 5.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbQlHutechWorkDataContext/TAIKHOAN_DN/TAIKHOAN_DN_TTDOANHNGHIEP" />
+      <nodes>
+        <classShapeMoniker Id="85d815be-3c1c-46c4-8fe2-11c257354f59" />
+        <classShapeMoniker Id="d18af41e-174d-4f18-884e-ca916a163357" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.84699625651042); (3.07291666666667 : 6.84699625651042 : JumpStart); (3.23958333333333 : 6.84699625651042 : JumpEnd); (3.5 : 6.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQlHutechWorkDataContext/THANHPHO/THANHPHO_THONGTINCANHAN" />
+      <nodes>
+        <classShapeMoniker Id="4aa724c2-35b3-4627-ab13-587e80345fea" />
+        <classShapeMoniker Id="27474b8e-845c-4900-9491-a1077f41d799" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.25091745577925); (3.09732443490112 : 5.90359302087812 : JumpStart); (3.21517556509888 : 5.78574189068037 : JumpEnd); (3.3125 : 5.68841745577925); (3.3125 : 2.72319286458333); (3.5 : 2.72319286458333)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQlHutechWorkDataContext/THANHPHO/THANHPHO_PHIEUDANGTUYEN" />
+      <nodes>
+        <classShapeMoniker Id="4aa724c2-35b3-4627-ab13-587e80345fea" />
+        <classShapeMoniker Id="b7957759-3259-450b-8433-7f5043cea20e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.44399251302083); (2.875 : 7.56899251302083); (2.875 : 8.34780110677083); (3.07291666666667 : 8.34780110677083 : JumpStart); (3.23958333333333 : 8.34780110677083 : JumpEnd); (4.38541416666667 : 8.34780110677083 : JumpStart); (4.55208083333333 : 8.34780110677083 : JumpEnd); (5.79166666666667 : 8.34780110677083 : JumpStart); (5.95833333333333 : 8.34780110677083 : JumpEnd); (6.125 : 8.34780110677083); (6.5 : 7.97280110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dbQlHutechWorkDataContext/THANHPHO/THANHPHO_TTDOANHNGHIEP" />
+      <nodes>
+        <classShapeMoniker Id="4aa724c2-35b3-4627-ab13-587e80345fea" />
+        <classShapeMoniker Id="d18af41e-174d-4f18-884e-ca916a163357" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
