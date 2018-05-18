@@ -135,14 +135,19 @@
                             </ul>
                         </li>
                     </ul>*@
-                    @if (Session["TaikhoanCN"] == null)
-                    {
-                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp"> <li><a href="/NguoiDung/DangNhap"><i class="fa fa-sign-in" aria-hidden="true"></i>Đăng Nhập</a></li><li><a href="/NguoiDung/DangKy"><i class="fa fa-pencil" aria-hidden="true"></i>Đăng Ký</a></li><li class="left-br"><a href="#" class="signin">Nhà Tuyển Dụng</a></li></ul>
-                    }
-                    else
-                    {
-                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp"><li><a href="/NguoiDung/ChiTiet"><i class="fa fa-info" aria-hidden="true"></i>Chi Tiết Tài Khoản</a></li><li><a href="/NguoiDung/DangXuat"><i class="fa fa-sign-out" aria-hidden="true"></i>Đăng xuất</a></li><li class="left-br"><a href="#" class="signin">Nhà Tuyển Dụng</a></li></ul>
-                    }
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        @if (Session["TaikhoanCN"] == null)
+                        {                         
+                            <li><a href="/NguoiDung/DangNhap"><i class="fa fa-sign-in"></i>Đăng Nhập</a></li>
+                            <li><a href="/NguoiDung/DangKy"><i class="fa fa-pencil"></i>Đăng Ký</a></li>
+                            <li class="left-br"><a href="#" class="signin">Nhà Tuyển Dụng</a></li>                         
+                        }
+                        else
+                        {                        
+                            <li><a href="/NguoiDung/ChiTiet"><i class="fa fa-pencil"></i>Thông Tin Tài Khoản</a></li>
+                            <li><a href="/NguoiDung/DangXuat"><i class="fa fa-sign-out"></i>Đăng xuất</a></li>
+                        }
+                    </ul>                    
                 </div>
             </div>
         </nav>

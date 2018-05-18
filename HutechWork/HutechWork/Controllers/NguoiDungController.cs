@@ -94,16 +94,6 @@ namespace HutechWork.Controllers
                 }
            }
         return this.DangKy();
-        }
-        public ActionResult DangXuat()
-        {
-            Session["TaikhoanCN"] = null;
-            return RedirectToAction("Index", "TrangChu");
-        }
-        public ActionResult TimKiem()
-        {
-            var ct = (from cttd in db.PHIEUDANGTUYENs select cttd).ToList();
-            return View(ct);
-        }
+        }      
     }
 }
