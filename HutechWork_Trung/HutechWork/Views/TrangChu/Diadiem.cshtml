@@ -2,6 +2,21 @@
 <div class="input-group">
     @foreach (var item in Model)
     {
-        <option>@item.TENTHANHPHO</option>
+        if (Session["diadiem"] != null)
+        {
+            if (@item.MATHANHPHO.ToString() == Session["diadiem"].ToString())
+            {
+                <option selected="selected" value="@item.MATHANHPHO">@item.TENTHANHPHO</option>
+                Session["diadiem"] = null;
+            }
+            else
+            {
+                <option value="@item.MATHANHPHO">@item.TENTHANHPHO</option>
+            }
+        }
+        else
+        {
+            <option value="@item.MATHANHPHO">@item.TENTHANHPHO</option>
+        }
     }
 </div>

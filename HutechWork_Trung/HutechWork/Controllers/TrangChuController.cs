@@ -14,23 +14,15 @@ namespace HutechWork.Controllers
         dbQlHutechWorkDataContext db = new dbQlHutechWorkDataContext();
         public ActionResult Index()
         {
-            List<PHIEUDANGTUYEN> ct = (from cttd in db.PHIEUDANGTUYENs select cttd).OrderByDescending(a => a.NGAYDANGTIN).Take(1).ToList();
+            List<PHIEUDANGTUYEN> ct = (from cttd in db.PHIEUDANGTUYENs select cttd).OrderByDescending(a => a.NGAYDANGTIN).Take(4).ToList();
             return View(ct);
         }
-        //public ActionResult TimKiem(int? page)
-        //{
-        //    int pageSize = 2;
-        //    //Tao bien so trang
-        //    int pageNum = (page ?? 1);
-        //    List<PHIEUDANGTUYEN> ct = (from cttd in db.PHIEUDANGTUYENs select cttd).ToList();
-        //    return View(ct.ToPagedList(pageNum, pageSize));
-        //}
+
+        [HttpGet]
         public ActionResult TimKiem(int? page)
         {
             var dt =
                 from a in db.PHIEUDANGTUYENs
-                join b in db.CHITIETTUYENDUNGs on a.MAPDT equals b.MAPDT
-                where b.MATHANHPHO.ToString() == Session["diadiem"].ToString() && b.MANGANH.ToString() == Session["nganhnghe"].ToString()
                 select a;
             int pageSize = 2;
             int pageNum = (page ?? 1);
@@ -38,19 +30,67 @@ namespace HutechWork.Controllers
         }
         [HttpPost]
         public ActionResult TimKiem(int? page, FormCollection collection)
-        {
-            ViewBag.ten = collection["ten"];
+        {               
+            Session["ten"] = collection["ten"];       
             Session["nganhnghe"] = collection["nganhnghe"];
             Session["diadiem"] = collection["diadiem"];
-            var dt =
-                from a in db.PHIEUDANGTUYENs
-                join b in db.CHITIETTUYENDUNGs on a.MAPDT equals b.MAPDT
+            if (collection["nganhnghe"].ToString().Length != 0)
+            {
+                if (collection["diadiem"].ToString().Length != 0)
+                {
+                    //Session["ten"] = "mot hai";
+                    var dt =
+                       from a in db.PHIEUDANGTUYENs
+                       where a.CHITIETTUYENDUNG.MATHANHPHO.ToString() == collection["diadiem"]
+                       && a.CHITIETTUYENDUNG.MANGANH.ToString() == collection["nganhnghe"].ToString()
+                       && (a.CHITIETTUYENDUNG.TIEUDE.ToString().Contains(collection["ten"].ToString()) || a.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN.ToString().Contains(collection["ten"].ToString()))
+                       select a;
+                    ViewBag.data = dt;
+                    int pageSize = 2;
+                    int pageNum = (page ?? 1);
+                    return View(dt.ToPagedList(pageNum, pageSize));
+                }
+                else
+                {
+                    var dt =
+                       from a in db.PHIEUDANGTUYENs
+                       where a.CHITIETTUYENDUNG.MANGANH.ToString() == collection["nganhnghe"].ToString()
+                       && (a.CHITIETTUYENDUNG.TIEUDE.ToString().Contains(collection["ten"].ToString()) || a.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN.ToString().Contains(collection["ten"].ToString()))
+                       select a;
+                    ViewBag.data = dt;
+                    int pageSize = 2;
+                    int pageNum = (page ?? 1);
+                    return View(dt.ToPagedList(pageNum, pageSize));
+                }
+            }
+            else
+            {
+                if (collection["diadiem"].ToString().Length != 0)
+                {
+                    var dt =
+                       from a in db.PHIEUDANGTUYENs
+                       where a.CHITIETTUYENDUNG.MATHANHPHO.ToString() == collection["diadiem"]
+                       && (a.CHITIETTUYENDUNG.TIEUDE.ToString().Contains(collection["ten"].ToString()) || a.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN.ToString().Contains(collection["ten"].ToString()))
+                       select a;
+                    ViewBag.data = dt;
+                    int pageSize = 2;
+                    int pageNum = (page ?? 1);
+                    return View(dt.ToPagedList(pageNum, pageSize));
+                }
+                else
+                {
+                    var dt =
+                       from a in db.PHIEUDANGTUYENs
+                       where (a.CHITIETTUYENDUNG.TIEUDE.ToString().Contains(collection["ten"].ToString()) || a.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN.ToString().Contains(collection["ten"].ToString()))
+                       select a;
+                    ViewBag.data = dt;
+                    int pageSize = 2;
+                    int pageNum = (page ?? 1);
+                    return View(dt.ToPagedList(pageNum, pageSize));
+                }
+            }  
 
-                where b.MATHANHPHO.ToString() == collection["diadiem"] && b.MANGANH.ToString() == collection["nganhnghe"].ToString()
-                select a;
-            int pageSize = 2;
-            int pageNum = (page ?? 1);
-            return View(dt.ToPagedList(pageNum, pageSize));
+            
         }
         public ActionResult Nganhnghe()
         {

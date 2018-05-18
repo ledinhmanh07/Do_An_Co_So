@@ -5,38 +5,36 @@
     ViewBag.Title = "TimKiem";
     Layout = "~/Views/Shared/LayoutHome.cshtml";
 }
-<section style="padding-top:100px">
+
+<section style="padding-top:100px">   
     <div class="wrapper" style="background-color:#F5F5F5">
         <div class="container">
             <div style="padding-top:10px;padding-bottom:20px">
                 <div class="banner-caption">
                     <div class="col-md-12 col-sm-12">
-                        @ViewBag.ten
-                        @ViewBag.nganhnghe
-                        @ViewBag.diadiem
-                        <form style="background-color:#00b9f2!important" class="form-horizontal">
-                            <div class="col-md-4">
+                        <form action="/TrangChu/TimKiem" method="post" style="background-color:#00b9f2!important" class="form-horizontal">
+                            <div class="col-md-4 no-padd">
                                 <div class="input-group">
-                                    <input type="text" class="form-control right-bor" placeholder="Nhập tên công việc, công ty ...">
+                                    <input type="text" name="ten" class="form-control right-bor" placeholder="Nhập tên công việc, công ty ..." value="@Session["ten"].ToString()">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="input-group">
-                                    <select class="form-control">
-                                        <option>Ngành nghề</option>
+                                    <select class="form-control" name="nganhnghe">
+                                        <option value="">Ngành nghề</option>
                                         @Html.Action("Nganhnghe", "TrangChu")
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="input-group">
-                                    <select class="form-control">
-                                        <option>Địa điểm</option>
+                                    <select class="form-control" name="diadiem">
+                                        <option value="">Địa điểm</option>
                                         @Html.Action("Diadiem", "TrangChu")
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2 no-padd">
                                 <div class="input-group">
                                     <button type="submit" class="btn btn-primary">Tìm Việc</button>
                                 </div>
@@ -57,14 +55,14 @@
                             </div>
                             <div class="col-md-6 col-sm-5">
                                 <div class="brows-job-position">
-                                    <h3>@item.TIEUDE</h3>
+                                    <h3>@item.CHITIETTUYENDUNG.TIEUDE</h3>
                                     <h5>@item.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN</h5>
-                                    <p><span>@item.NGANH.TENNGANH</span><span class="brows-job-sallery"><i class="fa fa-money"></i>@String.Format("{0:0,0}", item.MUCLUONGTOITHIEU) - @String.Format("{0:0,0}", item.MUCLUONGTOIDA) VND</span></p>
+                                    <p><span>@item.CHITIETTUYENDUNG.NGANH.TENNGANH</span><span class="brows-job-sallery"><i class="fa fa-money"></i>@String.Format("{0:0,0}", item.CHITIETTUYENDUNG.MUCLUONGTOITHIEU) - @String.Format("{0:0,0}", item.CHITIETTUYENDUNG.MUCLUONGTOIDA) VND</span></p>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-3">
                                 <div class="brows-job-location">
-                                    <p><i class="fa fa-map-marker"></i>@item.DIACHILAMVIEC - @item.THANHPHO.TENTHANHPHO </p>
+                                    <p><i class="fa fa-map-marker"></i>@item.CHITIETTUYENDUNG.DIACHILAMVIEC - @item.CHITIETTUYENDUNG.THANHPHO.TENTHANHPHO </p>
                                 </div>
                             </div>
                             <div class="col-md-2 col-sm-2">

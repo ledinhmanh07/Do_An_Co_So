@@ -60,19 +60,19 @@
                         <ul> 
                             <li>
                                 <i class="fa fa-map-marker"></i>
-                                <span>@Model.DIACHILAMVIEC - @Model.THANHPHO.TENTHANHPHO </span>
+                                <span>@Model.CHITIETTUYENDUNG.DIACHILAMVIEC - @Model.CHITIETTUYENDUNG.THANHPHO.TENTHANHPHO </span>
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i>
-                                <span>@Model.EMAILLIENHE</span>
+                                <span>@Model.CHITIETTUYENDUNG.EMAILLIENHE</span>
                             </li>
                             <li>
                                 <i style="padding-left:5px" class="fa fa-info"></i>
-                                <span>Người liên hệ : @Model.NGUOILIENHE</span>
+                                <span>Người liên hệ : @Model.CHITIETTUYENDUNG.NGUOILIENHE</span>
                             </li>
                             <li>
                                 <i class="fa fa-money"></i>
-                                <span>@String.Format("{0:0,0}", Model.MUCLUONGTOITHIEU) - @String.Format("{0:0,0}", Model.MUCLUONGTOIDA) VND/Tháng</span>
+                                <span>@String.Format("{0:0,0}", Model.CHITIETTUYENDUNG.MUCLUONGTOITHIEU) - @String.Format("{0:0,0}", Model.CHITIETTUYENDUNG.MUCLUONGTOIDA) VND/Tháng</span>
                             </li>
                         </ul> 
                     </div>
@@ -102,14 +102,14 @@
         <div class="container"> 
             <div class="row row-bottom"> 
                 <h2 class="detail-title">Chi Tiết Về Công Việc</h2> 
-                <h3>@Model.TIEUDE</h3>
+                <h3>@Model.CHITIETTUYENDUNG.TIEUDE</h3>
                 <ul class="detail-list"> 
-                    <li> Chức danh : @Model.CHUCDANH </li>
-                    <li>Cấp bậc : @Model.CAPBAC</li>
-                    <li>Ngành : @Model.NGANH.TENNGANH</li>
-                    <li>Mô tả công việc : @Model.MOTACV</li>
-                    <li>Yêu cầu công việc : @Model.YEUCAUCV</li>
-                    <li>Kỹ năng : @Model.KYNANG</li>
+                    <li> Chức danh : @Model.CHITIETTUYENDUNG.CHUCDANH </li>
+                    <li>Cấp bậc : @Model.CHITIETTUYENDUNG.CAPBAC</li>
+                    <li>Ngành : @Model.CHITIETTUYENDUNG.NGANH.TENNGANH</li>
+                    <li>Mô tả công việc : @Model.CHITIETTUYENDUNG.MOTACV</li>
+                    <li>Yêu cầu công việc : @Model.CHITIETTUYENDUNG.YEUCAUCV</li>
+                    <li>Kỹ năng : @Model.CHITIETTUYENDUNG.KYNANG</li>
                 </ul> 
             </div>
         </div>
