@@ -34,6 +34,8 @@ namespace HutechWork.Controllers
             Session["ten"] = collection["ten"];       
             Session["nganhnghe"] = collection["nganhnghe"];
             Session["diadiem"] = collection["diadiem"];
+            int pageSize = 2;
+            int pageNum = (page ?? 1);
             if (collection["nganhnghe"].ToString().Length != 0)
             {
                 if (collection["diadiem"].ToString().Length != 0)
@@ -46,8 +48,6 @@ namespace HutechWork.Controllers
                        && (a.CHITIETTUYENDUNG.TIEUDE.ToString().Contains(collection["ten"].ToString()) || a.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN.ToString().Contains(collection["ten"].ToString()))
                        select a;
                     ViewBag.data = dt;
-                    int pageSize = 2;
-                    int pageNum = (page ?? 1);
                     return View(dt.ToPagedList(pageNum, pageSize));
                 }
                 else
@@ -58,8 +58,6 @@ namespace HutechWork.Controllers
                        && (a.CHITIETTUYENDUNG.TIEUDE.ToString().Contains(collection["ten"].ToString()) || a.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN.ToString().Contains(collection["ten"].ToString()))
                        select a;
                     ViewBag.data = dt;
-                    int pageSize = 2;
-                    int pageNum = (page ?? 1);
                     return View(dt.ToPagedList(pageNum, pageSize));
                 }
             }
@@ -73,8 +71,6 @@ namespace HutechWork.Controllers
                        && (a.CHITIETTUYENDUNG.TIEUDE.ToString().Contains(collection["ten"].ToString()) || a.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN.ToString().Contains(collection["ten"].ToString()))
                        select a;
                     ViewBag.data = dt;
-                    int pageSize = 2;
-                    int pageNum = (page ?? 1);
                     return View(dt.ToPagedList(pageNum, pageSize));
                 }
                 else
@@ -84,13 +80,9 @@ namespace HutechWork.Controllers
                        where (a.CHITIETTUYENDUNG.TIEUDE.ToString().Contains(collection["ten"].ToString()) || a.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN.ToString().Contains(collection["ten"].ToString()))
                        select a;
                     ViewBag.data = dt;
-                    int pageSize = 2;
-                    int pageNum = (page ?? 1);
                     return View(dt.ToPagedList(pageNum, pageSize));
                 }
-            }  
-
-            
+            }          
         }
         public ActionResult Nganhnghe()
         {

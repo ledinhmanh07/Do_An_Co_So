@@ -37,28 +37,26 @@
                         <img style="height:60px" src="~/img/Logo_HUTECH.jpg" class="logo logo-scrolled" alt="">
                     </a>
                 </div>
-                <div class="collapse navbar-collapse" id="navbar-menu">                   
-                    <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li><a href="/TrangChu/Timkiem">Tất cả công việc</a></li>
-                    </ul>
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp"></ul>
                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                        @if (Session["TaikhoanCN"] == null)
-                        {                         
+                        @if (Session["TaikhoanDN"] == null)
+                        {
                             <li><a href="/NguoiDung/DangNhap"><i class="fa fa-sign-in"></i>Đăng Nhập</a></li>
                             <li><a href="/NguoiDung/DangKy"><i class="fa fa-pencil"></i>Đăng Ký</a></li>
-                            <li class="left-br"><a href="/NhaTuyenDung/Index" class="signin">Nhà Tuyển Dụng</a></li>                         
+                            <li class="left-br"><a href="#" class="signin">Đăng Tuyển Dụng</a></li>
                         }
                         else
-                        {                        
-                            <li><a href="/NguoiDung/ChiTiet"><i class="fa fa-pencil"></i>Thông Tin Tài Khoản</a></li>
+                        {
+                            <li><a href="/NguoiDung/ChiTiet"><i class="fa fa-pencil"></i>Quản Lý Tài Khoản</a></li>
                             <li><a href="/NguoiDung/DangXuat"><i class="fa fa-sign-out"></i>Đăng xuất</a></li>
                         }
-                    </ul>                    
+                    </ul>
                 </div>
             </div>
         </nav>
         <div class="clearfix">
-        </div>     
+        </div>
         <div>
             @RenderBody()
         </div>

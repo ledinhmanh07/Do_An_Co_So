@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_Vieclam" Class="dbQlHutechWorkDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-6UOHKN8\SQLEXPRESS;Initial Catalog=DB_Vieclam;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_VieclamConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=bao-pc\sqlexpress;Initial Catalog=DB_Vieclam;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DB_VieclamConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CHITIETTUYENDUNG" Member="CHITIETTUYENDUNGs">
     <Type Name="CHITIETTUYENDUNG">
       <Column Name="MAPDT" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -21,18 +21,18 @@
       <Association Name="THANHPHO_CHITIETTUYENDUNG" Member="THANHPHO" ThisKey="MATHANHPHO" OtherKey="MATHANHPHO" Type="THANHPHO" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TTDOANHNGHIEP" Member="TTDOANHNGHIEPs">
-    <Type Name="TTDOANHNGHIEP">
-      <Column Name="MATKDN" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="LOGO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="TENDN" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="QUYMODN" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="THONGTINDN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+  <Table Name="dbo.THONGTINCANHAN" Member="THONGTINCANHANs">
+    <Type Name="THONGTINCANHAN">
+      <Column Name="MATKCN" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TEN" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="GIOITINH" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYSINH" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
       <Column Name="DIACHI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="MATHANHPHO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PHUCLOIDN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="TAIKHOAN_DN_TTDOANHNGHIEP" Member="TAIKHOAN_DN" ThisKey="MATKDN" OtherKey="MATKDN" Type="TAIKHOAN_DN" IsForeignKey="true" />
-      <Association Name="THANHPHO_TTDOANHNGHIEP" Member="THANHPHO" ThisKey="MATHANHPHO" OtherKey="MATHANHPHO" Type="THANHPHO" IsForeignKey="true" />
+      <Association Name="TAIKHOAN_CN_THONGTINCANHAN" Member="TAIKHOAN_CN" ThisKey="MATKCN" OtherKey="MATKCN" Type="TAIKHOAN_CN" IsForeignKey="true" />
+      <Association Name="THANHPHO_THONGTINCANHAN" Member="THANHPHO" ThisKey="MATHANHPHO" OtherKey="MATHANHPHO" Type="THANHPHO" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HOSOXINVIEC" Member="HOSOXINVIECs">
@@ -55,6 +55,15 @@
       <Association Name="TAIKHOAN_DN_LUOTUNGTUYEN" Member="TAIKHOAN_DN" ThisKey="MATKDN" OtherKey="MATKDN" Type="TAIKHOAN_DN" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.NOPDON" Member="NOPDONs">
+    <Type Name="NOPDON">
+      <Column Name="MATKCN" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAPDT" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TINHTRANG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="PHIEUDANGTUYEN_NOPDON" Member="PHIEUDANGTUYEN" ThisKey="MAPDT" OtherKey="MAPDT" Type="PHIEUDANGTUYEN" IsForeignKey="true" />
+      <Association Name="TAIKHOAN_CN_NOPDON" Member="TAIKHOAN_CN" ThisKey="MATKCN" OtherKey="MATKCN" Type="TAIKHOAN_CN" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.NGANH" Member="NGANHs">
     <Type Name="NGANH">
       <Column Name="MANGANH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -69,15 +78,6 @@
       <Column Name="TENNGOAINGU" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="TRINHDO" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Association Name="NGOAINGU_HOSOXINVIEC" Member="HOSOXINVIECs" ThisKey="MANGOAINGU" OtherKey="MANGOAINGU" Type="HOSOXINVIEC" />
-    </Type>
-  </Table>
-  <Table Name="dbo.NOPDON" Member="NOPDONs">
-    <Type Name="NOPDON">
-      <Column Name="MATKCN" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MAPDT" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TINHTRANG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="PHIEUDANGTUYEN_NOPDON" Member="PHIEUDANGTUYEN" ThisKey="MAPDT" OtherKey="MAPDT" Type="PHIEUDANGTUYEN" IsForeignKey="true" />
-      <Association Name="TAIKHOAN_CN_NOPDON" Member="TAIKHOAN_CN" ThisKey="MATKCN" OtherKey="MATKCN" Type="TAIKHOAN_CN" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PHIEUDANGTUYEN" Member="PHIEUDANGTUYENs">
@@ -96,9 +96,9 @@
       <Column Name="MATKCN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="MASV" Type="System.String" DbType="Char(11)" CanBeNull="true" />
       <Column Name="PASS" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="TAIKHOAN_CN_THONGTINCANHAN" Member="THONGTINCANHAN" ThisKey="MATKCN" OtherKey="MATKCN" Type="THONGTINCANHAN" Cardinality="One" />
       <Association Name="TAIKHOAN_CN_HOSOXINVIEC" Member="HOSOXINVIEC" ThisKey="MATKCN" OtherKey="MATKCN" Type="HOSOXINVIEC" Cardinality="One" />
       <Association Name="TAIKHOAN_CN_NOPDON" Member="NOPDONs" ThisKey="MATKCN" OtherKey="MATKCN" Type="NOPDON" />
-      <Association Name="TAIKHOAN_CN_THONGTINCANHAN" Member="THONGTINCANHAN" ThisKey="MATKCN" OtherKey="MATKCN" Type="THONGTINCANHAN" Cardinality="One" />
     </Type>
   </Table>
   <Table Name="dbo.TAIKHOAN_DN" Member="TAIKHOAN_DNs">
@@ -106,9 +106,23 @@
       <Column Name="MATKDN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="EMAIL" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Column Name="PASS" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Association Name="TAIKHOAN_DN_TTDOANHNGHIEP" Member="TTDOANHNGHIEP" ThisKey="MATKDN" OtherKey="MATKDN" Type="TTDOANHNGHIEP" Cardinality="One" />
       <Association Name="TAIKHOAN_DN_LUOTUNGTUYEN" Member="LUOTUNGTUYEN" ThisKey="MATKDN" OtherKey="MATKDN" Type="LUOTUNGTUYEN" Cardinality="One" />
       <Association Name="TAIKHOAN_DN_PHIEUDANGTUYEN" Member="PHIEUDANGTUYENs" ThisKey="MATKDN" OtherKey="MATKDN" Type="PHIEUDANGTUYEN" />
+      <Association Name="TAIKHOAN_DN_TTDOANHNGHIEP" Member="TTDOANHNGHIEP" ThisKey="MATKDN" OtherKey="MATKDN" Type="TTDOANHNGHIEP" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTDOANHNGHIEP" Member="TTDOANHNGHIEPs">
+    <Type Name="TTDOANHNGHIEP">
+      <Column Name="MATKDN" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LOGO" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TENDN" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="QUYMODN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="THONGTINDN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MATHANHPHO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PHUCLOIDN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="TAIKHOAN_DN_TTDOANHNGHIEP" Member="TAIKHOAN_DN" ThisKey="MATKDN" OtherKey="MATKDN" Type="TAIKHOAN_DN" IsForeignKey="true" />
+      <Association Name="THANHPHO_TTDOANHNGHIEP" Member="THANHPHO" ThisKey="MATHANHPHO" OtherKey="MATHANHPHO" Type="THANHPHO" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.THANHPHO" Member="THANHPHOs">
@@ -116,22 +130,8 @@
       <Column Name="MATHANHPHO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TENTHANHPHO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="THANHPHO_CHITIETTUYENDUNG" Member="CHITIETTUYENDUNGs" ThisKey="MATHANHPHO" OtherKey="MATHANHPHO" Type="CHITIETTUYENDUNG" />
-      <Association Name="THANHPHO_TTDOANHNGHIEP" Member="TTDOANHNGHIEPs" ThisKey="MATHANHPHO" OtherKey="MATHANHPHO" Type="TTDOANHNGHIEP" />
       <Association Name="THANHPHO_THONGTINCANHAN" Member="THONGTINCANHANs" ThisKey="MATHANHPHO" OtherKey="MATHANHPHO" Type="THONGTINCANHAN" />
-    </Type>
-  </Table>
-  <Table Name="dbo.THONGTINCANHAN" Member="THONGTINCANHANs">
-    <Type Name="THONGTINCANHAN">
-      <Column Name="MATKCN" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="HO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TEN" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="GIOITINH" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="NGAYSINH" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
-      <Column Name="SDT" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
-      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="MATHANHPHO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="THANHPHO_THONGTINCANHAN" Member="THANHPHO" ThisKey="MATHANHPHO" OtherKey="MATHANHPHO" Type="THANHPHO" IsForeignKey="true" />
-      <Association Name="TAIKHOAN_CN_THONGTINCANHAN" Member="TAIKHOAN_CN" ThisKey="MATKCN" OtherKey="MATKCN" Type="TAIKHOAN_CN" IsForeignKey="true" />
+      <Association Name="THANHPHO_TTDOANHNGHIEP" Member="TTDOANHNGHIEPs" ThisKey="MATHANHPHO" OtherKey="MATHANHPHO" Type="TTDOANHNGHIEP" />
     </Type>
   </Table>
 </Database>

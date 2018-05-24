@@ -181,6 +181,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NguoiDungController.cs" />
+    <Compile Include="Controllers\NhaTuyenDungController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -270,9 +271,6 @@
       <LastGenOutput>dbQlHutechWork.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Models\dbQlHutechWork.dbml.layout">
-      <DependentUpon>dbQlHutechWork.dbml</DependentUpon>
-    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\html5shiv.min.js" />
@@ -335,6 +333,8 @@
     <Content Include="Views\TrangChu\Nganhnghe.cshtml" />
     <Content Include="Views\TrangChu\Diadiem.cshtml" />
     <Content Include="Views\TrangChu\ChitietCv.cshtml" />
+    <Content Include="Views\Shared\_LayoutNhaTuyenDung.cshtml" />
+    <Content Include="Views\NhaTuyenDung\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -349,6 +349,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\dbQlHutechWork.dbml.layout">
+      <DependentUpon>dbQlHutechWork.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
