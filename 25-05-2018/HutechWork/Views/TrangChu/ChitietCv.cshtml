@@ -1,0 +1,131 @@
+﻿@using HutechWork.Models
+@{
+    ViewBag.Title = "ChitietCv";
+    Layout = "~/Views/Shared/LayoutHome.cshtml";
+}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Best Responsive job portal template build on Latest Bootstrap.">
+    <meta name="keywords" content="job, nob board, job portal, job listing">
+    <meta name="robots" content="index,follow">
+    <title>Job Stock - Responsive Job Portal Bootstrap Template | ThemezHub</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-wysihtml5.css">
+    <link rel="stylesheet" type="text/css" href="css/prettify.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/line-font.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/bootsnav.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" id="jssDefault" href="css/colors/green-style.css">
+    <link href="css/responsiveness.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper"> 
+        <div class="clearfix"></div>
+        <section class="inner-header-title"> 
+            <div class="container"> 
+                <h1>Chi Tiết Công Việc</h1>
+            </div></section> 
+        <div class="clearfix"></div>
+        <section class="detail-desc"> 
+            <div class="container white-shadow"> 
+                <div class="row"> 
+                    <div class="detail-pic">
+                        <img src="~/img/@Model.TAIKHOAN_DN.TTDOANHNGHIEP.LOGO" class="img-responsive" alt="" />
+                    </div>
+                </div>
+            <div class="row bottom-mrg"> 
+                <div class="col-md-8 col-sm-8"> 
+                    <div class="detail-desc-caption"> 
+                        <h4>@Model.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN</h4> 
+                        <p style="padding-top:10px">Sơ lược về công ty : @Model.TAIKHOAN_DN.TTDOANHNGHIEP.THONGTINDN</p>
+                        <p>Quy Mô: @Model.TAIKHOAN_DN.TTDOANHNGHIEP.QUYMODN</p>
+                        <p>Địa chỉ : @Model.TAIKHOAN_DN.TTDOANHNGHIEP.DIACHI - @Model.TAIKHOAN_DN.TTDOANHNGHIEP.THANHPHO.TENTHANHPHO</p>
+                        <p>Phúc lợi doanh nghiệp : @Model.TAIKHOAN_DN.TTDOANHNGHIEP.PHUCLOIDN</p>
+                        <ul> </ul> 
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4"> 
+                    <div class="get-touch"> 
+                        <h4>Chi tiết</h4> 
+                        <ul> 
+                            <li>
+                                <i class="fa fa-map-marker"></i>
+                                <span>@Model.CHITIETTUYENDUNG.DIACHILAMVIEC - @Model.CHITIETTUYENDUNG.THANHPHO.TENTHANHPHO </span>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope"></i>
+                                <span>@Model.CHITIETTUYENDUNG.EMAILLIENHE</span>
+                            </li>
+                            <li>
+                                <i style="padding-left:5px" class="fa fa-info"></i>
+                                <span>Người liên hệ : @Model.CHITIETTUYENDUNG.NGUOILIENHE</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-money"></i>
+                                <span>@String.Format("{0:0,0}", Model.CHITIETTUYENDUNG.MUCLUONGTOITHIEU) - @String.Format("{0:0,0}", Model.CHITIETTUYENDUNG.MUCLUONGTOIDA) VND/Tháng</span>
+                            </li>
+                        </ul> 
+                    </div>
+                </div>
+            </div>
+            <div class="row no-padd"> 
+                <div class="detail pannel-footer"> 
+                    <div class="col-md-5 col-sm-5">  
+                    </div>
+                    <div class="col-md-7 col-sm-7"> 
+                        <div class="detail-pannel-footer-btn pull-right">
+                            @if (@ViewData["1"] == null)
+                            {
+                                <a href="@Url.Action("Nopdon", "TrangChu", new { id = Model.MAPDT, @strURL = Request.Url.ToString() })" class="footer-btn grn-btn" title="">Nộp Đơn</a>
+                            }
+                            else
+                            {
+                                <a href="#" class="footer-btn grn-btn" title="">Đã Nộp Đơn</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section> 
+    <section class="full-detail-description full-detail"> 
+        <div class="container"> 
+            <div class="row row-bottom"> 
+                <h2 class="detail-title">Chi Tiết Về Công Việc</h2> 
+                <h3>@Model.CHITIETTUYENDUNG.TIEUDE</h3>
+                <ul class="detail-list"> 
+                    <li> Chức danh : @Model.CHITIETTUYENDUNG.CHUCDANH </li>
+                    <li>Cấp bậc : @Model.CHITIETTUYENDUNG.CAPBAC</li>
+                    <li>Ngành : @Model.CHITIETTUYENDUNG.NGANH.TENNGANH</li>
+                    <li>Mô tả công việc : @Model.CHITIETTUYENDUNG.MOTACV</li>
+                    <li>Yêu cầu công việc : @Model.CHITIETTUYENDUNG.YEUCAUCV</li>
+                    <li>Kỹ năng : @Model.CHITIETTUYENDUNG.KYNANG</li>
+                </ul> 
+            </div>
+        </div>
+    </section> 
+    <div class="clearfix"></div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootsnav.js"></script>
+    <script src="js/viewportchecker.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/wysihtml5-0.3.0.js"></script>
+    <script src="js/bootstrap-wysihtml5.js"></script>
+    <script src="js/jQuery.style.switcher.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script type="text/javascript">$(document).ready(function(){$('#styleOptions').styleSwitcher();}); </script>
+    <script>function openRightMenu(){document.getElementById("rightMenu").style.display="block";}function closeRightMenu(){document.getElementById("rightMenu").style.display="none";}</script> </div>
+</body>
+</html>
