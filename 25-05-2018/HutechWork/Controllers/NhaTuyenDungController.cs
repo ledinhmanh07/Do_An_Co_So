@@ -182,5 +182,54 @@ namespace HutechWork.Controllers
             var thanhpho = from tp in db.THANHPHOs where tp.MATHANHPHO != matp select tp;
             return PartialView(thanhpho);
         }
+        public ActionResult DangTuyen()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult DangTuyen(FormCollection fr)
+        {
+            var tieude = fr["tieude"];
+            var chucdanh = fr["chucdanh"];
+            var capbac = fr["capbac"];
+            var diachi = fr["diachi"];
+            var nganhnghe = fr["nganhnghe"];
+            var thanhpho = fr["thanhpho"];
+            var diachi1 = fr["diachi"];
+            var mucluongtoithieu = fr["mucluongtoithieu"];
+            var mucluongtoida = fr["mucluongtoida"];
+            var mota = fr["mota"];
+            var yeucau = fr["yeucau"];
+            var kynang = fr["kynang"];
+            var nguoilienhe = fr["nguoilienhe"];
+            var email = fr["email"];
+            var thoihan = String.Format("{0:MM/dd/yyyy}", fr["thoihan"]);
+            PHIEUDANGTUYEN pdt = new PHIEUDANGTUYEN();
+            pdt.MATKDN = int.Parse(Session["TaikhoanDN"].ToString());
+            pdt.NGAYDANGTIN = DateTime.Now;
+            pdt.THOIHANDANGTIN = DateTime.Parse(thoihan);
+            db.PHIEUDANGTUYENs.InsertOnSubmit(pdt);
+            db.SubmitChanges();
+            var mapdt = db.PHIEUDANGTUYENs.SingleOrDefault(z => z.MATKDN == pdt.MATKDN && z.NGAYDANGTIN == pdt.NGAYDANGTIN).MAPDT;
+            CHITIETTUYENDUNG ct = new CHITIETTUYENDUNG();
+            ct.MAPDT = mapdt;
+            ct.KYNANG = kynang;
+            ct.EMAILLIENHE = email;
+            ct.CAPBAC = capbac;
+            ct.CHUCDANH = chucdanh;
+            ct.DIACHILAMVIEC = diachi1;
+            ct.MOTACV = mota;
+            ct.MUCLUONGTOIDA = Double.Parse(mucluongtoida);
+            ct.MUCLUONGTOITHIEU = Double.Parse(mucluongtoithieu);
+            ct.NGUOILIENHE = nganhnghe;
+            ct.TIEUDE = tieude;
+            ct.YEUCAUCV = yeucau;
+            ct.MANGANH = int.Parse(nganhnghe);
+            ct.MATHANHPHO = int.Parse(thanhpho);
+            ct.TINHTRANG = false;
+            db.CHITIETTUYENDUNGs.InsertOnSubmit(ct);
+            db.SubmitChanges();
+            return View();
+        }
     }
 }

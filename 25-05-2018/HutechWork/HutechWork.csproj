@@ -348,6 +348,7 @@
     <Content Include="Views\NhaTuyenDung\DangKy.cshtml" />
     <Content Include="Views\NhaTuyenDung\ChiTiet.cshtml" />
     <Content Include="Views\NhaTuyenDung\Diadiem.cshtml" />
+    <Content Include="Views\NhaTuyenDung\DangTuyen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

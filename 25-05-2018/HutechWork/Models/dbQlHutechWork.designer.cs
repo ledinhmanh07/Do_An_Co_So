@@ -229,6 +229,8 @@ namespace HutechWork.Models
 		
 		private string _EMAILLIENHE;
 		
+		private System.Nullable<bool> _TINHTRANG;
+		
 		private EntityRef<NGANH> _NGANH;
 		
 		private EntityRef<PHIEUDANGTUYEN> _PHIEUDANGTUYEN;
@@ -267,6 +269,8 @@ namespace HutechWork.Models
     partial void OnNGUOILIENHEChanged();
     partial void OnEMAILLIENHEChanging(string value);
     partial void OnEMAILLIENHEChanged();
+    partial void OnTINHTRANGChanging(System.Nullable<bool> value);
+    partial void OnTINHTRANGChanged();
     #endregion
 		
 		public CHITIETTUYENDUNG()
@@ -565,6 +569,26 @@ namespace HutechWork.Models
 					this._EMAILLIENHE = value;
 					this.SendPropertyChanged("EMAILLIENHE");
 					this.OnEMAILLIENHEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHTRANG", DbType="Bit")]
+		public System.Nullable<bool> TINHTRANG
+		{
+			get
+			{
+				return this._TINHTRANG;
+			}
+			set
+			{
+				if ((this._TINHTRANG != value))
+				{
+					this.OnTINHTRANGChanging(value);
+					this.SendPropertyChanging();
+					this._TINHTRANG = value;
+					this.SendPropertyChanged("TINHTRANG");
+					this.OnTINHTRANGChanged();
 				}
 			}
 		}
