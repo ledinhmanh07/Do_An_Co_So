@@ -210,7 +210,7 @@ namespace HutechWork.Controllers
             pdt.THOIHANDANGTIN = DateTime.Parse(thoihan);
             db.PHIEUDANGTUYENs.InsertOnSubmit(pdt);
             db.SubmitChanges();
-            var mapdt = db.PHIEUDANGTUYENs.SingleOrDefault(z => z.MATKDN == pdt.MATKDN && z.NGAYDANGTIN == pdt.NGAYDANGTIN).MAPDT;
+            var mapdt = db.PHIEUDANGTUYENs.SingleOrDefault(z => z.MATKDN == pdt.MATKDN && z.NGAYDANGTIN.Value.Date == pdt.NGAYDANGTIN.Value.Date && z.NGAYDANGTIN.Value.Month == pdt.NGAYDANGTIN.Value.Month && z.NGAYDANGTIN.Value.Year == pdt.NGAYDANGTIN.Value.Year && z.NGAYDANGTIN.Value.Minute == pdt.NGAYDANGTIN.Value.Minute && z.NGAYDANGTIN.Value.Hour == pdt.NGAYDANGTIN.Value.Hour).MAPDT;
             CHITIETTUYENDUNG ct = new CHITIETTUYENDUNG();
             ct.MAPDT = mapdt;
             ct.KYNANG = kynang;
@@ -229,7 +229,7 @@ namespace HutechWork.Controllers
             ct.TINHTRANG = false;
             db.CHITIETTUYENDUNGs.InsertOnSubmit(ct);
             db.SubmitChanges();
-            return View();
+            return RedirectToAction("Index", "NhaTuyenDung");
         }
     }
 }

@@ -22,7 +22,7 @@ namespace HutechWork.Controllers
         public ActionResult TimKiem(int? page)
         {
             var dt =
-                from a in db.PHIEUDANGTUYENs
+                from a in db.PHIEUDANGTUYENs where a.CHITIETTUYENDUNG.TINHTRANG == true
                 select a;
             int pageSize = 2;
             int pageNum = (page ?? 1);
@@ -44,7 +44,7 @@ namespace HutechWork.Controllers
                     var dt =
                        from a in db.PHIEUDANGTUYENs
                        where a.CHITIETTUYENDUNG.MATHANHPHO.ToString() == collection["diadiem"]
-                       && a.CHITIETTUYENDUNG.MANGANH.ToString() == collection["nganhnghe"].ToString()
+                       && a.CHITIETTUYENDUNG.MANGANH.ToString() == collection["nganhnghe"].ToString() && a.CHITIETTUYENDUNG.TINHTRANG == true
                        && (a.CHITIETTUYENDUNG.TIEUDE.ToString().Contains(collection["ten"].ToString()) || a.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN.ToString().Contains(collection["ten"].ToString()))
                        select a;
                     ViewBag.data = dt;
@@ -54,7 +54,7 @@ namespace HutechWork.Controllers
                 {
                     var dt =
                        from a in db.PHIEUDANGTUYENs
-                       where a.CHITIETTUYENDUNG.MANGANH.ToString() == collection["nganhnghe"].ToString()
+                       where a.CHITIETTUYENDUNG.MANGANH.ToString() == collection["nganhnghe"].ToString() && a.CHITIETTUYENDUNG.TINHTRANG == true
                        && (a.CHITIETTUYENDUNG.TIEUDE.ToString().Contains(collection["ten"].ToString()) || a.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN.ToString().Contains(collection["ten"].ToString()))
                        select a;
                     ViewBag.data = dt;
@@ -67,7 +67,7 @@ namespace HutechWork.Controllers
                 {
                     var dt =
                        from a in db.PHIEUDANGTUYENs
-                       where a.CHITIETTUYENDUNG.MATHANHPHO.ToString() == collection["diadiem"]
+                       where a.CHITIETTUYENDUNG.MATHANHPHO.ToString() == collection["diadiem"] && a.CHITIETTUYENDUNG.TINHTRANG == true
                        && (a.CHITIETTUYENDUNG.TIEUDE.ToString().Contains(collection["ten"].ToString()) || a.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN.ToString().Contains(collection["ten"].ToString()))
                        select a;
                     ViewBag.data = dt;
@@ -77,7 +77,7 @@ namespace HutechWork.Controllers
                 {
                     var dt =
                        from a in db.PHIEUDANGTUYENs
-                       where (a.CHITIETTUYENDUNG.TIEUDE.ToString().Contains(collection["ten"].ToString()) || a.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN.ToString().Contains(collection["ten"].ToString()))
+                       where (a.CHITIETTUYENDUNG.TIEUDE.ToString().Contains(collection["ten"].ToString()) || a.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN.ToString().Contains(collection["ten"].ToString())&& a.CHITIETTUYENDUNG.TINHTRANG == true)
                        select a;
                     ViewBag.data = dt;
                     return View(dt.ToPagedList(pageNum, pageSize));
@@ -96,7 +96,7 @@ namespace HutechWork.Controllers
         }
         public ActionResult ChitietCv(int id)
         {
-            var sp = from s in db.PHIEUDANGTUYENs where s.MAPDT == id select s;
+            var sp = from s in db.PHIEUDANGTUYENs where s.MAPDT == id && s.CHITIETTUYENDUNG.TINHTRANG == true select s;
             if (Session["TaikhoanCN"] == null)
                 ViewData["1"] = null;
             else
