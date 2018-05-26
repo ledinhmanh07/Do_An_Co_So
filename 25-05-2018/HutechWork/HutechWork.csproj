@@ -277,6 +277,9 @@
       <LastGenOutput>dbQlHutechWork.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Models\dbQlHutechWork.dbml.layout">
+      <DependentUpon>dbQlHutechWork.dbml</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\html5shiv.min.js" />
@@ -348,6 +351,7 @@
     <Content Include="Views\NhaTuyenDung\DangKy.cshtml" />
     <Content Include="Views\NhaTuyenDung\ChiTiet.cshtml" />
     <Content Include="Views\NhaTuyenDung\Diadiem.cshtml" />
+    <Content Include="Views\NguoiDung\Chitietcanhan.cshtml" />
     <Content Include="Views\NhaTuyenDung\DangTuyen.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -363,11 +367,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Models\dbQlHutechWork.dbml.layout">
-      <DependentUpon>dbQlHutechWork.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

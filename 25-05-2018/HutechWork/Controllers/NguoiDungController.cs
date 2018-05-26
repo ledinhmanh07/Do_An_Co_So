@@ -100,5 +100,10 @@ namespace HutechWork.Controllers
             Session["TaikhoanCN"] = null;
             return RedirectToAction("Index", "TrangChu");
         }
+        public ActionResult Chitietcanhan()
+        {
+            TAIKHOAN_CN tk = db.TAIKHOAN_CNs.SingleOrDefault(n => n.MATKCN.ToString() == Session["TaikhoanCN"].ToString());
+            return View(tk);
+        }
     }
 }

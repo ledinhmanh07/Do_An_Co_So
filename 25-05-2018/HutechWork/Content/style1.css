@@ -309,7 +309,6 @@ h1 span {
 .form-style-agile input[type="text"],
 .form-style-agile input[type="number"],
 .form-style-agile input[type="email"],
-.form-style-agile input[type="date"],
 select.category,
 .form-style-agile textarea {
     outline: none;
@@ -359,7 +358,6 @@ select option {
     border: none;
     padding: 13px 0;
     margin-top: 30px;
-    margin-left: 180px;
     outline: none;
     width: 40%;
     border-radius: 12px;

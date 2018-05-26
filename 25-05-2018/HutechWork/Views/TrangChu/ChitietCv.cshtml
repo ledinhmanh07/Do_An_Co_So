@@ -3,37 +3,13 @@
     ViewBag.Title = "ChitietCv";
     Layout = "~/Views/Shared/LayoutHome.cshtml";
 }
-<!DOCTYPE html>
-<html class="no-js" lang="zxx">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Best Responsive job portal template build on Latest Bootstrap.">
-    <meta name="keywords" content="job, nob board, job portal, job listing">
-    <meta name="robots" content="index,follow">
-    <title>Job Stock - Responsive Job Portal Bootstrap Template | ThemezHub</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-wysihtml5.css">
-    <link rel="stylesheet" type="text/css" href="css/prettify.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <link href="css/line-font.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/bootsnav.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" id="jssDefault" href="css/colors/green-style.css">
-    <link href="css/responsiveness.css" rel="stylesheet">
-</head>
+
 <body>
     <div class="wrapper"> 
         <div class="clearfix"></div>
         <section class="inner-header-title"> 
             <div class="container"> 
-                <h1>Chi Tiết Công Việc</h1>
+                <h1>@Model.CHITIETTUYENDUNG.TIEUDE</h1>
             </div></section> 
         <div class="clearfix"></div>
         <section class="detail-desc"> 
@@ -56,7 +32,7 @@
                 </div>
                 <div class="col-md-4 col-sm-4"> 
                     <div class="get-touch"> 
-                        <h4>Chi tiết</h4> 
+                        <h4>Thông Tin Liên Hệ</h4> 
                         <ul> 
                             <li>
                                 <i class="fa fa-map-marker"></i>
@@ -114,18 +90,4 @@
             </div>
         </div>
     </section> 
-    <div class="clearfix"></div>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootsnav.js"></script>
-    <script src="js/viewportchecker.js"></script>
-    <script src="js/bootstrap-select.min.js"></script>
-    <script src="js/wysihtml5-0.3.0.js"></script>
-    <script src="js/bootstrap-wysihtml5.js"></script>
-    <script src="js/jQuery.style.switcher.js"></script>
-    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-    <script src="js/custom.js"></script>
-    <script type="text/javascript">$(document).ready(function(){$('#styleOptions').styleSwitcher();}); </script>
-    <script>function openRightMenu(){document.getElementById("rightMenu").style.display="block";}function closeRightMenu(){document.getElementById("rightMenu").style.display="none";}</script> </div>
 </body>
-</html>

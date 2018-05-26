@@ -7,7 +7,6 @@
             if (@item.MATHANHPHO.ToString() == Session["diadiem"].ToString())
             {
                 <option selected="selected" value="@item.MATHANHPHO">@item.TENTHANHPHO</option>
-                Session["diadiem"] = null;
             }
             else
             {

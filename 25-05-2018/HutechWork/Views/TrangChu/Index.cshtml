@@ -9,7 +9,7 @@
         <div class="banner-caption">
             <div class="col-md-12 col-sm-12 banner-text">
                 <h1>Hàng Ngàn Cơ Hội Việc Làm</h1>
-                <form action="/TrangChu/TimKiem" method="post" form-horizontal">
+                <form action="/TrangChu/TimKiem" method="post" class="form-horizontal">
                     <div class="col-md-4 no-padd">
                         <div class="input-group">
                             <input type="text" name="ten" class="form-control right-bor" placeholder="Nhập tên công việc, công ty ..." value="">
@@ -51,7 +51,7 @@
         </div>
         @foreach (var item in Model)
         {
-            <a href="job-detail.html" class="item-click">
+            <a href="@Url.Action("ChitietCv","TrangChu", new { id = item.MAPDT})" class="item-click">
                 <article>
                     <div class="brows-job-list" style="background-color:white">
                         <div class="col-md-1 col-sm-2 small-padding" style="padding-top:20px">
