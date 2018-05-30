@@ -219,7 +219,7 @@ img {
 /*end reset*/
 
 body {
-    background: url(../img/1.jpg)no-repeat;
+    background: url(../img/banner.jpg)no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -309,6 +309,8 @@ h1 span {
 .form-style-agile input[type="text"],
 .form-style-agile input[type="number"],
 .form-style-agile input[type="email"],
+.form-style-agile input[type="date"],
+.form-style-agile input[type="file"],
 select.category,
 .form-style-agile textarea {
     outline: none;
@@ -358,6 +360,7 @@ select option {
     border: none;
     padding: 13px 0;
     margin-top: 30px;
+    margin-left:175px;
     outline: none;
     width: 40%;
     border-radius: 12px;

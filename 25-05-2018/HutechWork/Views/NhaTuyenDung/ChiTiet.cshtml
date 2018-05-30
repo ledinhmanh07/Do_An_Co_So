@@ -12,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html lang="zxx">
 <head>
-    <title>Photography Form Responsive Widget Template :: w3layouts</title>
+    <title>Chi Tiết Tài Khoản</title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" ~/Content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
@@ -85,7 +85,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                     <div class="form-style-agile">
                         <label>Logo Hiện Tại</label>
-                        @if (@Model.LOGO == null)
+                        @if (@Model.LOGO == "")
                         {
                             <p></p>
                             <input class="input-group" name="fileUpload" type="file">
@@ -97,6 +97,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         }
                     </div>
                     <input type="submit" value="Lưu">
+                    <div style="padding-top:10px" class="w3layouts-grids">
+                        <a style="color:white" href="/NhaTuyenDung/Index">&lt&lt Trở về</a>
+                    </div>
                 </form>
             }
         </div>
