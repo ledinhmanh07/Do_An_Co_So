@@ -105,5 +105,24 @@ namespace HutechWork.Controllers
             TAIKHOAN_CN tk = db.TAIKHOAN_CNs.SingleOrDefault(n => n.MATKCN.ToString() == Session["TaikhoanCN"].ToString());
             return View(tk);
         }
+        public ActionResult Diadiem()
+        {
+            var matp = db.THONGTINCANHANs.SingleOrDefault(n => n.MATKCN == int.Parse(Session["TaikhoanCN"].ToString())).MATHANHPHO;
+            var thanhpho = from tp in db.THANHPHOs where tp.MATHANHPHO != matp select tp;
+            return PartialView(thanhpho);
+        }
+
+        //Sửa thông tin cá nhân
+        [HttpGet]
+        public ActionResult Suathongtin()
+        {
+            THONGTINCANHAN tt = db.THONGTINCANHANs.SingleOrDefault(n => n.MATKCN.ToString() == Session["TaikhoanCN"].ToString());
+            return View(tt);
+        }
+        [HttpPost]
+        public ActionResult Suathongtin(FormCollection collection)
+        {
+            return View();
+        }
     }
 }
