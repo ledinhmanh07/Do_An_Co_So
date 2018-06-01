@@ -178,6 +178,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NguoiDungController.cs" />
@@ -214,6 +215,7 @@
     <Content Include="Content\grabbing.png" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\line-font.css" />
+    <Content Include="Content\material-dashboard.min.css" />
     <Content Include="Content\owl.carousel.css" />
     <Content Include="Content\owl.theme.css" />
     <Content Include="Content\PagedList.css" />
@@ -261,7 +263,10 @@
     <Content Include="img\xerox-home.png" />
     <Content Include="img\yahoo-home.png" />
     <Content Include="index.html" />
+    <Content Include="Scripts\arrive.min.js" />
     <Content Include="Scripts\bootsnav.js" />
+    <Content Include="Scripts\bootstrap-material-design.min.js" />
+    <Content Include="Scripts\bootstrap-notify.js" />
     <Content Include="Scripts\bootstrap-select.min.js" />
     <Content Include="Scripts\bootstrap-wysihtml5.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -281,7 +286,9 @@
       <DependentUpon>dbQlHutechWork.dbml</DependentUpon>
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\chartist.min.js" />
     <Content Include="Scripts\custom.js" />
+    <Content Include="Scripts\demo.js" />
     <Content Include="Scripts\html5shiv.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -289,13 +296,18 @@
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.sharrre.js" />
     <Content Include="Scripts\jQuery.style.switcher.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery1.min.js" />
+    <Content Include="Scripts\material-dashboard.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Scripts\perfect-scrollbar.jquery.min.js" />
+    <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\viewportchecker.js" />
@@ -353,8 +365,21 @@
     <Content Include="Views\NhaTuyenDung\Diadiem.cshtml" />
     <Content Include="Views\NguoiDung\Chitietcanhan.cshtml" />
     <Content Include="Views\NhaTuyenDung\DangTuyen.cshtml" />
-    <Content Include="Views\NguoiDung\Diadiem.cshtml" />
-    <Content Include="Views\NguoiDung\Suathongtin.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\ChiTiet.cshtml" />
+    <Content Include="Views\Admin\Diadiem.cshtml" />
+    <Content Include="Views\Admin\Nganhnghe.cshtml" />
+    <Content Include="Views\Admin\Xoa.cshtml" />
+    <Content Include="Views\Admin\TaikhoanCN.cshtml" />
+    <Content Include="Views\Admin\ChiTietCN.cshtml" />
+    <Content Include="Views\Admin\XoaCN.cshtml" />
+    <Content Include="Views\Admin\TaiKhoanDN.cshtml" />
+    <Content Include="Views\Admin\ChiTietDN.cshtml" />
+    <Content Include="Views\Admin\XoaDN.cshtml" />
+    <Content Include="Views\Admin\QuanLyDT.cshtml" />
+    <Content Include="Views\Admin\ChiTietDT.cshtml" />
+    <Content Include="Views\Admin\DangNhap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

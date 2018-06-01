@@ -1,4 +1,5 @@
-﻿--Thêm Tài khoản cá nhân
+﻿use DB_Vieclam
+--Thêm Tài khoản cá nhân
 INSERT INTO [TAIKHOAN_CN] VALUES ('1511061217', 'dinhmanh')
 INSERT INTO [TAIKHOAN_CN] VALUES ('1511061420', 'phuoctrung')
 

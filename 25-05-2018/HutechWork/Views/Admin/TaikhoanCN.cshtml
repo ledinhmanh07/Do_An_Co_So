@@ -1,0 +1,57 @@
+﻿@model IEnumerable<HutechWork.Models.TAIKHOAN_CN>
+@using HutechWork.Models;
+
+@{
+    ViewBag.Title = "TaiKhoanCN";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="card">
+    <div class="card-header card-header-primary">
+        <h4 class="card-title ">Tài khoản cá nhân</h4>
+        <p class="card-category">Các tài khoản đăng ký sử dụng</p>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class=" text-primary">
+                <th>
+                    Mã TKCN
+                </th>
+                <th>
+                    Tên Đăng Nhập
+                </th>
+                <th>
+                    Mật Khẩu
+                </th>
+                <th>
+                    Họ và Tên
+                </th>
+                <th></th>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.MATKCN
+                            </td>
+                            <td>
+                                @item.MASV
+                            </td>
+                            <td>
+                                @item.PASS
+                            </td>
+                            <td>
+                                @item.THONGTINCANHAN.HO @item.THONGTINCANHAN.TEN 
+                            </td>
+                            <td>
+                                <a href="@Url.Action("ChiTietCN","Admin",new { id = @item.MATKCN })">Chi Tiết</a> |
+                                <a href="@Url.Action("XoaCN","Admin",new { id = @item.MATKCN })">Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

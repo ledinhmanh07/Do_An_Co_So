@@ -192,7 +192,6 @@ namespace HutechWork.Controllers
             var tieude = fr["tieude"];
             var chucdanh = fr["chucdanh"];
             var capbac = fr["capbac"];
-            var diachi = fr["diachi"];
             var nganhnghe = fr["nganhnghe"];
             var thanhpho = fr["thanhpho"];
             var diachi1 = fr["diachi"];

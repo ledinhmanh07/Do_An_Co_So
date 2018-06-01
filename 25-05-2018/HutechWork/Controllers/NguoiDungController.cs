@@ -11,13 +11,6 @@ namespace HutechWork.Controllers
     {
         dbQlHutechWorkDataContext db = new dbQlHutechWorkDataContext();
         // GET: NguoiDung
-        public bool KiemtraMssv(string value)
-        {
-            Regex isValidInput = new Regex(@"^\d{10,11}$");
-            if (!isValidInput.IsMatch(value))
-                return false;
-            return true;
-        }
         public bool Kiemtramatkhau(string value)
         {
             Regex isValidInput = new Regex(@"^\w{6,20}");
@@ -34,8 +27,8 @@ namespace HutechWork.Controllers
         {
             var tendn = form["TenDN"];
             var matkhau = form["Matkhau"];
-            if (KiemtraMssv(tendn) == false)
-                ViewData["Loi1"] = "Mã số sinh viên không hợp lệ !!";
+            if (Kiemtramatkhau(tendn) == false)
+                ViewData["Loi1"] = "Tên đăng nhập từ 6-20 kí tự (a-z, A-Z, kí tự _) !!";
             else
             {
                 if (Kiemtramatkhau(matkhau) == false)
@@ -65,8 +58,8 @@ namespace HutechWork.Controllers
             var tendn = form["TenDN"];
             var matkhau = form["Matkhau"];
             var nhaplaimatkhau = form["Nhaplaimatkhau"];
-            if (KiemtraMssv(tendn) == false)
-                ViewData["Loi3"] = "Mã số sinh viên không hợp lệ !!";
+            if (Kiemtramatkhau(tendn) == false)
+                ViewData["Loi3"] = "Tên đăng nhập từ 6-20 kí tự (a-z, A-Z, kí tự _) !!";
             else
             {
                 TAIKHOAN_CN tk1 = db.TAIKHOAN_CNs.SingleOrDefault(n => n.MASV == tendn);
@@ -90,7 +83,7 @@ namespace HutechWork.Controllers
                 }
                 else
                 {
-                    ViewData["Loi3"] = "Mã số sinh viên này đã đăng ký tài khoản !!";
+                    ViewData["Loi3"] = "Tên đăng nhập này đã đăng ký tài khoản !!";
                 }
            }
         return this.DangKy();
@@ -104,25 +97,6 @@ namespace HutechWork.Controllers
         {
             TAIKHOAN_CN tk = db.TAIKHOAN_CNs.SingleOrDefault(n => n.MATKCN.ToString() == Session["TaikhoanCN"].ToString());
             return View(tk);
-        }
-        public ActionResult Diadiem()
-        {
-            var matp = db.THONGTINCANHANs.SingleOrDefault(n => n.MATKCN == int.Parse(Session["TaikhoanCN"].ToString())).MATHANHPHO;
-            var thanhpho = from tp in db.THANHPHOs where tp.MATHANHPHO != matp select tp;
-            return PartialView(thanhpho);
-        }
-
-        //Sửa thông tin cá nhân
-        [HttpGet]
-        public ActionResult Suathongtin()
-        {
-            THONGTINCANHAN tt = db.THONGTINCANHANs.SingleOrDefault(n => n.MATKCN.ToString() == Session["TaikhoanCN"].ToString());
-            return View(tt);
-        }
-        [HttpPost]
-        public ActionResult Suathongtin(FormCollection collection)
-        {
-            return View();
         }
     }
 }
