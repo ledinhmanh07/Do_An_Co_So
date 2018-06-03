@@ -49,8 +49,8 @@
             <form action="/NguoiDung/Suahoso" method="get">
                 <div class="w3layouts-grids">
                     <div class="form-style-agile form-grids-w3l">
-                        <label>Thành Phố</label>
-                        <select style="color:black" name="thanhpho" class="category">
+                        <label>Ngành Nghề</label>
+                        <select style="color:black" name="nganhnghe" class="category">
                             <option selected="selected">@Model.NGANH.TENNGANH</option>
                             @Html.Action("Nganh", "NguoiDung")
                         </select>
@@ -59,7 +59,7 @@
 
                 <div class="form-style-agile">
                     <label>Học Vấn</label>
-                    <input style="color:black" name="ho" type="text" value="@Model.HOCVAN" required="">
+                    <input style="color:black" name="hocvan" type="text" value="@Model.HOCVAN" required="">
                 </div>
 
                 <div class="form-style-agile">
@@ -73,8 +73,8 @@
                 </div>
 
                 <div class="form-style-agile">
-                    <label>Ngoai Ngữ</label>
-                    <input style="color:black" name="ten" type="text" value="@Model.NGOAINGU" required="">
+                    <label>Ngoại Ngữ</label>
+                    <input style="color:black" name="ngoaingu" type="text" value="@Model.NGOAINGU" required="">
                 </div>
                 <input type="submit" value="Lưu">
                 <div style="padding-top:10px" class="w3layouts-grids">

@@ -52,6 +52,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             @using (Html.BeginForm("ChiTiet", "NhaTuyenDung", FormMethod.Post, new { @enctype = "multipart/form-data" }))
             {
                 <form action="/NhaTuyenDung/ChiTiet" method="get">
+
                     <div class="form-style-agile">
                         <label>Logo Hiện Tại</label>
                         @if (@Model.LOGO == "")

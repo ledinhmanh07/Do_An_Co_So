@@ -5,6 +5,8 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using HutechWork.Models;
+using System.IO;
+
 namespace HutechWork.Controllers
 {
     public class NguoiDungController : Controller
@@ -113,9 +115,60 @@ namespace HutechWork.Controllers
             return View(tt);
         }
         [HttpPost]
-        public ActionResult Suathongtin(FormCollection collection)
+        public ActionResult Suathongtin(FormCollection fr, HttpPostedFileBase fileUpload)
         {
-            return View();
+            var ho = fr["ho"];
+            var ten = fr["ten"];
+            var gender = fr["gender"];
+            var ngaysinh = String.Format("{0:MM/dd/yyyy}", fr["ngaysinh"]);
+            var email = fr["email"];
+            var sdt = fr["sdt"];
+            var thanhpho = fr["thanhpho"];
+            var diachi = fr["diachi"];
+            int tp = db.THANHPHOs.SingleOrDefault(n => n.TENTHANHPHO == thanhpho).MATHANHPHO;
+            var tk1 = db.THONGTINCANHANs.SingleOrDefault(n => n.MATKCN == int.Parse(Session["TaikhoanCN"].ToString()));
+            if (fileUpload == null)
+            {
+                tk1.HO = ho;
+                tk1.TEN = ten;
+                tk1.GIOITINH = gender;
+                tk1.NGAYSINH = DateTime.Parse(ngaysinh);
+                tk1.EMAIL = email;
+                tk1.SDT = sdt;
+                tk1.MATHANHPHO = tp;
+                tk1.DIACHI = diachi;
+                db.SubmitChanges();
+            }
+            //Them vao CSDL
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    //Luu ten fie, luu y bo sung thu vien using System.IO;
+                    var fileName = Path.GetFileName(fileUpload.FileName);
+                    //Luu duong dan cua file
+                    var path = Path.Combine(Server.MapPath("~/img"), fileName);
+                    //Kiem tra hình anh ton tai chua?
+                    if (System.IO.File.Exists(path))
+                        ViewBag.Thongbao = "Hình ảnh đã tồn tại";
+                    else
+                    {
+                        //Luu hinh anh vao duong dan
+                        fileUpload.SaveAs(path);
+                    }
+                    tk1.HO = ho;
+                    tk1.TEN = ten;
+                    tk1.GIOITINH = gender;
+                    tk1.NGAYSINH = DateTime.Parse(ngaysinh);
+                    tk1.EMAIL = email;
+                    tk1.SDT = sdt;
+                    tk1.MATHANHPHO = tp;
+                    tk1.DIACHI = diachi;                    
+                    tk1.HINHDD = fileName;
+                    db.SubmitChanges();
+                }
+            }
+                return RedirectToAction("Chitietcanhan", "NguoiDung");
         }
 
         public ActionResult Nganh()
@@ -132,9 +185,22 @@ namespace HutechWork.Controllers
             return View(tt);
         }
         [HttpPost]
-        public ActionResult Suahoso(FormCollection collection)
+        public ActionResult Suahoso(FormCollection fr)
         {
-            return View();
+            var nganhnghe = fr["nganhnghe"];
+            var hocvan = fr["hocvan"];
+            var kinhnghiem = fr["kinhnghiem"];
+            var kynang = fr["kynang"];
+            var ngoaingu = fr["ngoaingu"];
+            int nn = db.NGANHs.SingleOrDefault(n => n.TENNGANH == nganhnghe).MANGANH;
+            var tk1 = db.HOSOXINVIECs.SingleOrDefault(n => n.MATKCN == int.Parse(Session["TaikhoanCN"].ToString()));
+            tk1.MANGANH = nn;
+            tk1.HOCVAN = hocvan;
+            tk1.KINHNGHIEM = kinhnghiem;
+            tk1.KYNANG = kynang;
+            tk1.NGOAINGU = ngoaingu;
+            db.SubmitChanges();
+            return RedirectToAction("Chitietcanhan", "NguoiDung");
         }
     }
 }

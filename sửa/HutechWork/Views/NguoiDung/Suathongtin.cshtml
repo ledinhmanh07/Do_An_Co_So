@@ -44,23 +44,22 @@
     </h1>
     <div class="main-~/Content-agile">
         <div class="sub-main-w3">
-            @using (Html.BeginForm("Suuthongtin", "NguoiDung", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+            @using (Html.BeginForm("Suathongtin", "NguoiDung", FormMethod.Post, new { @enctype = "multipart/form-data" }))
             {
             <form action="/NguoiDung/Suathongtin" method="get">
                 <div class="form-style-agile">
                     <label>Logo Hiện Tại</label>
                     @if (Model.HINHDD == null)
-        {
-            <p><img height="120" width="120" src="~/img/img-01.jpg" /></p>
-            <input class="input-group" name="fileUpload" type="file">
-}
-else
-{
-            <p><img height="120" width="120" src="~/img/@Model.HINHDD" /></p>
-            <input class="input-group" name="fileUpload" type="file">
-}
+                    {
+                        <p></p>
+                        <input class="input-group" name="fileUpload" type="file">
+                    }
+                    else
+                    { 
+                        <p><img height="120" width="120" src="~/img/@Model.HINHDD" /></p>
+                        <input class="input-group" name="fileUpload" type="file">
+                    }
                 </div>
-
                 <div class="form-style-agile">
                     <label>Họ</label>
                     <input style="color:black" name="ho" type="text" value="@Model.HO" required="">
