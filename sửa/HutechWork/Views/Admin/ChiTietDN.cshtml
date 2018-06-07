@@ -1,0 +1,78 @@
+﻿@model HutechWork.Models.TAIKHOAN_DN
+
+@{
+    ViewBag.Title = "ChiTietDN";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi Tiết Tài Khoản Doanh Nghiệp</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Tài Khoản
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MATKDN)
+        </dd>
+        <dt>
+            Tên Đăng Nhập
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            Mật Khẩu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PASS)
+        </dd>
+        <dt>
+            Logo
+        </dt>
+
+        <dd>
+            <img src="~/img/@Model.TTDOANHNGHIEP.LOGO" />
+        </dd>
+
+        <dt>
+            Tên Doanh Nghiệp
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TTDOANHNGHIEP.TENDN)
+        </dd>
+
+        <dt>
+            Quy Mô Doanh Nghiệp
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TTDOANHNGHIEP.QUYMODN)
+        </dd>
+
+        <dt>
+            Thông Tin Doanh Nghiệp
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TTDOANHNGHIEP.THONGTINDN)
+        </dd>
+
+        <dt>
+            Địa Chỉ Doanh Nghiệp
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TTDOANHNGHIEP.DIACHI)
+        </dd>
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("XoaDN","Admin",new { id = Model.MATKDN })">Xóa Tài Khoản</a> ||
+    <a href="/Admin/TaiKhoanDN">&lt&lt Trở lại</a>
+</p>

@@ -1,0 +1,80 @@
+﻿@using HutechWork.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<TAIKHOAN_CN>
+@{
+    ViewBag.Title = "TimKiem";
+    Layout = "~/Views/Shared/_LayoutNhaTuyenDung.cshtml";
+}
+
+<section style="padding-top:100px">
+    <div class="wrapper" style="background-color:#F5F5F5">
+        <div class="container">
+            <div style="padding-top:10px;padding-bottom:20px">
+                <div class="banner-caption">
+                    <div class="col-md-12 col-sm-12">
+                        <form action="/NhaTuyenDung/Timkiemhoso" method="post" style="background-color:#00b9f2!important" class="form-horizontal">
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <select class="form-control" name="nganhnghe">
+                                        <option value="">Ngành nghề</option>
+                                        @Html.Action("Nganhnghe", "TrangChu")
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <select class="form-control" name="diadiem">
+                                        <option value="">Địa điểm</option>
+                                        @Html.Action("Diadiem", "TrangChu")
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2 no-padd">
+                                <div class="input-group">
+                                    <button type="submit" class="btn btn-primary">Tìm Hồ Sơ</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            @foreach (var item in Model)
+            {
+                <a href="@Url.Action("ChitietHS","NhaTuyenDung", new { id = item.MATKCN})" class="item-click">
+                    <article>
+                        <div class="brows-job-list" style="background-color:white">
+                            <div class="col-md-1 col-sm-2 small-padding">
+                                <div class="brows-job-company-img">
+                                    <img src="~/img/@item.THONGTINCANHAN.HINHDD" class="img-responsive" alt="" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-5">
+                                <div class="brows-job-position">
+                                    <h3>@item.THONGTINCANHAN.HO @item.THONGTINCANHAN.TEN</h3>
+                                    <h5>@item.THONGTINCANHAN.GIOITINH</h5>
+                                    <p><span>@item.HOSOXINVIEC.NGANH.TENNGANH</span>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3">
+                                <div class="brows-job-location">
+                                    <p><i class="fa fa-map-marker"></i>@item.THONGTINCANHAN.DIACHI - @item.THONGTINCANHAN.THANHPHO.TENTHANHPHO </p>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <div class="brows-job-location">
+                                    <span><p>Lương mong muốn:</p><p>@item.HOSOXINVIEC.LUONGMM VNĐ</p></span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            }
+            <div class="row">
+                <ul class="pagination">
+                    @Html.PagedListPager(Model, page => Url.Action("Timkiemhoso", new { page = page }))
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>

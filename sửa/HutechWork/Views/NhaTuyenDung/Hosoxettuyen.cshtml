@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Hosoxettuyen";
+    Layout = "~/Views/Shared/_LayoutNhaTuyenDung.cshtml";
+}
+
+<body>
+    <section style="padding-top:100px">
+        <div class="wrapper" style="background-color:#F5F5F5">
+            <div class="container">
+                <div style="padding-top:20px;padding-bottom:20px">
+                    @foreach (var item in Model)
+                    {
+                        <a href="@Url.Action("ChitietHS","NhaTuyenDung", new { id = item.MATKCN})" class="item-click">
+                            <article>
+                                <div class="brows-job-list" style="background-color:white">
+                                    <div class="col-md-1 col-sm-2 small-padding">
+                                        <div class="brows-job-company-img">
+                                            <img src="~/img/@item.TAIKHOAN_CN.THONGTINCANHAN.HINHDD" class="img-responsive" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-5">
+                                        <div class="brows-job-position">
+                                            <h3>@item.TAIKHOAN_CN.THONGTINCANHAN.HO @item.TAIKHOAN_CN.THONGTINCANHAN.TEN</h3>
+                                            <h5>@item.TAIKHOAN_CN.THONGTINCANHAN.GIOITINH</h5>
+                                            <p><span>@item.TAIKHOAN_CN.HOSOXINVIEC.NGANH.TENNGANH</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-3">
+                                        <div class="brows-job-location">
+                                            <p></p>
+                                            <p><i class="fa fa-map-marker"></i>@item.PHIEUDANGTUYEN.CHITIETTUYENDUNG.TIEUDE</p>
+                                            <h5>Ngành:@item.PHIEUDANGTUYEN.CHITIETTUYENDUNG.NGANH.TENNGANH</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2">
+                                        <div class="brows-job-location">
+                                            <span><p>Ngày Gửi:</p><p>@String.Format("{0:dd/MM/yyyy}", @item.NGAYNOPDON)</p></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                    }                    
+                    </div>
+                </div>
+            </div>
+    </section>
+</body>
+

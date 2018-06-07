@@ -1,0 +1,89 @@
+﻿@model HutechWork.Models.CHITIETTUYENDUNG
+
+@{
+    ViewBag.Title = "ChiTiet";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>Chi Tiết Đăng Tuyển</h2>
+<hr />
+<div class="main-~/Content-agile">
+    @using (Html.BeginForm("ChiTiet", "Admin", FormMethod.Post))
+    {
+        <form action="/Admin/ChiTiet" method="post">
+            <h3>Mã Phiếu Đăng Tuyển: @Model.MAPDT  -  Tên Doanh Nghiệp: @Model.PHIEUDANGTUYEN.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN</h3>
+            <div class="form-style-agile">
+                <label style="color:black">Tiêu Đề</label>
+                <input style="color:black" value="@Model.TIEUDE" type="text" disabled="disabled">
+            </div>
+            <div class="w3layouts-grids">
+                <div class="form-style-agile form-grids-w3l">
+                    <label style="color:black">Chức Danh</label>
+                    <input style="color:black" value="@Model.CHUCDANH" type="text" disabled="disabled">
+                </div>
+                <div class="form-style-agile form-grids-w3l">
+                    <label style="color:black">Cấp Bậc</label>
+                    <input style="color:black" value="@Model.CAPBAC" type="text" disabled="disabled">
+                </div>
+            </div>
+            <div class="form-style-agile">
+                <label style="color:black">Địa Chỉ Làm Việc</label>
+                <input style="color:black" value="@Model.DIACHILAMVIEC" type="text" disabled="disabled">
+            </div>
+            <div class="w3layouts-grids">
+                <div class="form-style-agile form-grids-w3l">
+                    <label style="color:black">Ngành nghề</label>
+                    <input style="color:black" value="@Model.NGANH.TENNGANH" disabled="disabled" type="text">
+                </div>
+                <div class="form-style-agile form-grids-w3l">
+                    <label style="color:black">Thành Phố</label>
+                    <input style="color:black" value="@Model.THANHPHO.TENTHANHPHO" disabled="disabled" type="text">
+                </div>
+            </div>
+            <div class="w3layouts-grids">
+                <div class="form-style-agile form-grids-w3l">
+                    <label style="color:black">Mức Lương Tối Thiếu</label>
+                    <input style="color:black" value="@Model.MUCLUONGTOITHIEU" disabled="disabled" type="number">
+                </div>
+                <div class="form-style-agile form-grids-w3l">
+                    <label style="color:black">Mức Lương Tối Đa</label>
+                    <input style="color:black" value="@Model.MUCLUONGTOIDA" type="number" disabled="disabled">
+                </div>
+            </div>
+            <div class="form-style-agile">
+                <label style="color:black">Mô Tả Công Việc</label>
+                <textarea style="color:black" disabled="disabled">@Model.MOTACV</textarea>
+            </div>
+            <div class="form-style-agile">
+                <label style="color:black">Yêu Cầu Công Việc</label>
+                <textarea style="color:black" disabled="disabled">@Model.YEUCAUCV</textarea>
+            </div>
+            <div class="form-style-agile">
+                <label style="color:black">Kỹ Năng</label>
+                <textarea style="color:black" disabled="disabled">@Model.KYNANG</textarea>
+            </div>
+            <div class="w3layouts-grids">
+                <div class="form-style-agile form-grids-w3l">
+                    <label style="color:black">Người Liên Hệ</label>
+                    <input style="color:black" value="@Model.NGUOILIENHE" type="text" disabled="disabled">
+                </div>
+                <div class="form-style-agile form-grids-w3l">
+                    <label style="color:black">Email Liên Hệ</label>
+                    <input style="color:black" value="@Model.EMAILLIENHE" type="email" disabled="disabled">
+                </div>
+            </div>
+            <div class="w3layouts-grids">
+                <div class="form-style-agile form-grids-w3l">
+                    <label style="color:black">Ngày Đăng Tuyển</label>
+                    <input style="color:black" value="@String.Format("{0:yyyy/MM/dd}", Model.PHIEUDANGTUYEN.NGAYDANGTIN)" type="date" disabled="disabled">
+                </div>
+                <div class="form-style-agile form-grids-w3l">
+                    <label style="color:black">Hạn Đăng Tuyển</label>
+                    <input style="color:black" value="@String.Format("{0:yyyy/MM/dd}", Model.PHIEUDANGTUYEN.THOIHANDANGTIN)" type="date" disabled="disabled">
+                </div>
+            </div>
+            <p></p>
+            <a href="@Url.Action("Xoa","Admin",new { id = Model.MAPDT })">Xóa</a> ||
+            <a href="/Admin/Index">&lt&lt Trở lại</a>
+        </form>
+    }
+</div>
