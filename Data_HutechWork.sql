@@ -27,7 +27,7 @@ INSERT INTO [HOSOXINVIEC] VALUES (2, 2, N'Tốt Nghiệp Đại Học HuTech', N
 
 --Thêm Tài khoản doanh nghiệp
 INSERT INTO [TAIKHOAN_DN] VALUES ('vietinbank@gmail.com','123456')
-INSERT INTO [TAIKHOAN_DN] VALUES ('dienmayxanh@gmail.com','123456')
+INSERT INTO [TAIKHOAN_DN] VALUES ('dienmay@gmail.com','123456')
 INSERT INTO [TAIKHOAN_DN] VALUES ('cocacola@gmail.com','123456')
 INSERT INTO [TAIKHOAN_DN] VALUES ('pepsi@gmail.com','123456')
 

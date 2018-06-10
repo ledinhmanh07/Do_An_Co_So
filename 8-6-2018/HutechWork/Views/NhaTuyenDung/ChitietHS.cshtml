@@ -1,0 +1,91 @@
+﻿@using HutechWork.Models
+@{
+    ViewBag.Title = "ChitietHS";
+    Layout = "~/Views/Shared/_LayoutNhaTuyenDung.cshtml";
+}
+<body>
+    <div class="wrapper">
+        <div class="clearfix"></div>
+        <section class="inner-header-title">
+            <div class="container">
+                <h1>Hồ Sơ Cá Nhân</h1>
+            </div>
+        </section>
+        <div class="clearfix"></div>
+        <section class="detail-desc">
+            <div class="container white-shadow">
+                <div class="row">
+                    <div class="detail-pic">
+                        <img src="~/img/@Model.THONGTINCANHAN.HINHDD" class="img-responsive" alt="" />
+                    </div>
+                    @*<div style="text-align:center"><h4>@Model.THONGTINCANHAN.HO @Model.THONGTINCANHAN.TEN</h4></div>*@
+                </div>
+                <div class="row bottom-mrg">
+                    <div class="col-md-8 col-sm-8">
+                        <div class="detail-desc-caption">
+                            <h4>@Model.THONGTINCANHAN.HO @Model.THONGTINCANHAN.TEN</h4>
+                            <p style="padding-top:10px">Giới Tính : @Model.THONGTINCANHAN.GIOITINH</p>
+                            <p>Năm Sinh: @String.Format("{0:dd/MM/yyyy}", @Convert.ToDateTime(Model.THONGTINCANHAN.NGAYSINH))</p>
+                            <ul> </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="get-touch">
+                            <h4>Thông Tin Liên Hệ</h4>
+                            <ul>
+                                <li>
+                                    <i class="fa fa-map-marker"></i>
+                                    <span>@Model.THONGTINCANHAN.DIACHI - @Model.THONGTINCANHAN.THANHPHO.TENTHANHPHO </span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope"></i>
+                                    <span>@Model.THONGTINCANHAN.EMAIL</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    <span>@Model.THONGTINCANHAN.SDT</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-money"></i>
+                                    <span>Lương Mong Muốn: @String.Format("{0:0,0}", @Model.HOSOXINVIEC.LUONGMM) VNĐ </span >
+                                </li >
+                            </ul >
+                        </div >
+                    </div >
+                </div >
+                <div class="row no-padd">
+                    <div class="detail pannel-footer">
+                        <div class="col-md-5 col-sm-5">
+                        </div>
+                        <div class="col-md-7 col-sm-7">
+                            <div class="detail-pannel-footer-btn pull-right">
+                                @*<a href="@Url.Action("Suathongtin","NguoiDung")" class="footer-btn grn-btn" title="">Chỉnh Sửa</a>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="full-detail-description full-detail">
+            <div class="container">
+                <div class="row row-bottom">
+                    <h2 class="detail-title">Thông Tin Chi Tiết</h2>
+                    <ul class="detail-list">
+                        <li>Ngành : @Model.HOSOXINVIEC.NGANH.TENNGANH </li>
+                        <li>Học Vấn : @Model.HOSOXINVIEC.HOCVAN</li>
+                        <li>Kinh Nghiệm : @Model.HOSOXINVIEC.KINHNGHIEM</li>
+                        <li>Kỹ Năng : @Model.HOSOXINVIEC.KYNANG</li>
+                        <li>Ngoại Ngữ : @Model.HOSOXINVIEC.NGOAINGU</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row no-padd">
+                <div class="detail pannel-footer">
+                    <div class="col-md-5 col-sm-5">
+                    </div>                    
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+

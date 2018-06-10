@@ -1,0 +1,161 @@
+﻿@model HutechWork.Models.CHITIETTUYENDUNG
+@{
+    ViewBag.Title = "DangTuyen";
+    Layout = null;
+}
+
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html lang="zxx">
+<head>
+    <title>Sửa Tin Tuyển Dụng</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" ~/Content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" ~/Content="Photography Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+    <script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+    </script>
+    <!-- Meta tag Keywords -->
+    <!-- css files -->
+    <link rel="stylesheet" href="~/Content/style1.css" type="text/css" media="all" />
+    <!-- Style-CSS -->
+    <!-- //css files -->
+    <!-- web-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Londrina+Outline" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <!-- //web-fonts -->
+</head>
+
+<body>
+    <script src='/ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src="/m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+    <!-- ~/Content -->
+    <h1>
+        <span>P</span>hiếu
+        <span>Đ</span>ăng
+        <span>T</span>uyển
+    </h1>
+    <div class="main-~/Content-agile">
+        <div class="sub-main-w3">
+            @using (Html.BeginForm("SuaDT", "NhaTuyenDung", FormMethod.Post))
+            {
+                <form action="/NhaTuyenDung/SuaDT" method="get">
+                    <div class="form-style-agile">
+                        <label>Tiêu Đề</label>
+                        <input style="color:black" placeholder="Tiêu đề ..." value="@Model.TIEUDE" name="tieude" type="text" required="">
+                    </div>
+                    <div class="w3layouts-grids">
+                        <div class="form-style-agile form-grids-w3l">
+                            <label>Chức Danh</label>
+                            <input style="color:black" placeholder="Ex: Cử Nhân, Thạc sĩ ..." value="@Model.CHUCDANH" name="chucdanh" type="text" required="">
+                        </div>
+                        <div class="form-style-agile form-grids-w3l">
+                            <label>Cấp Bậc</label>
+                            <input style="color:black" placeholder="Ex: Nhân Viên, Giám Đốc ..." value="@Model.CAPBAC" name="capbac" type="text" required="">
+                        </div>
+                    </div>
+                    <div class="form-style-agile">
+                        <label>Địa Chỉ Làm Việc</label>
+                        <input style="color:black" placeholder="Địa chỉ làm việc ..." name="diachi" value="@Model.DIACHILAMVIEC" type="text" required="">
+                    </div>
+                    <div class="w3layouts-grids">
+                        <div class="form-style-agile form-grids-w3l">
+                            <label>Ngành Nghề</label>
+                            <select style="color:black" name="nganhnghe" class="category">
+                                <option selected="selected">@Model.NGANH.TENNGANH</option>
+                                @Html.Action("NganhNghe1","NhaTuyenDung",new { id = Model.MAPDT })
+                            </select>
+                        </div>
+                        <div class="form-style-agile form-grids-w3l">
+                            <label>Thành Phố</label>
+                            <select style="color:black" name="thanhpho" class="category">
+                                <option selected="selected">@Model.THANHPHO.TENTHANHPHO</option>
+                                @Html.Action("Diadiem1", "NhaTuyenDung", new { id = Model.MAPDT })
+                            </select>
+                        </div>
+                    </div>
+                    <div class="w3layouts-grids">
+                        <div class="form-style-agile form-grids-w3l">
+                            <label>Mức Lương Tối Thiếu</label>
+                            <input style="color:black" placeholder="Mức Lương Tối Thiếu ... VNĐ" value="@Model.MUCLUONGTOITHIEU" name="mucluongtoithieu" type="number" required="">
+                        </div>
+                        <div class="form-style-agile form-grids-w3l">
+                            <label>Mức Lương Tối Đa</label>
+                            <input style="color:black" placeholder="Mức Lương Tối Đa ... VNĐ" value="@Model.MUCLUONGTOIDA" name="mucluongtoida" type="number" required="">
+                        </div>
+                    </div>
+                    <div class="form-style-agile">
+                        <label>Mô Tả Công Việc</label>
+                        <textarea style="color:black" placeholder="Mô Tả Công Việc ..." name="mota" required="">@Model.MOTACV</textarea>
+                    </div>
+                    <div class="form-style-agile">
+                        <label>Yêu Cầu Công Việc</label>
+                        <textarea style="color:black" placeholder="Yêu Cầu Công Việc ..." name="yeucau" required="">@Model.YEUCAUCV</textarea>
+                    </div>
+                    <div class="form-style-agile">
+                        <label>Kỹ Năng</label>
+                        <textarea style="color:black" placeholder="Kỹ Năng ..."  name="kynang" required="">@Model.KYNANG</textarea>
+                    </div>
+                    <div class="w3layouts-grids">
+                        <div class="form-style-agile form-grids-w3l">
+                            <label>Người Liên Hệ</label>
+                            <input style="color:black" placeholder="Tên Người Liên Hệ ..." value="@Model.NGUOILIENHE" name="nguoilienhe" type="text" required="">
+                        </div>
+                        <div class="form-style-agile form-grids-w3l">
+                            <label>Email Liên Hệ</label>
+                            <input style="color:black" placeholder="Email Liên Hệ ..." name="email" value="@Model.EMAILLIENHE" type="email" required="">
+                        </div>
+                    </div>
+                    <div class="w3layouts-grids">
+                        <div class="form-style-agile form-grids-w3l">
+                            <label>Hạn Đăng Tuyển</label>
+                            <input style="color:black" name="thoihan" value="@String.Format("{0:yyyy/MM/dd}", Model.PHIEUDANGTUYEN.THOIHANDANGTIN)" type="date" required="">
+                        </div>
+                    </div>
+                    <input type="submit" value="Sửa">
+                    <div style="padding-top:10px" class="w3layouts-grids">
+                        <a style="color:white" href="/NhaTuyenDung/ChiTietDT/@Model.MAPDT">&lt&lt Trở lại</a>
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+    <!-- ~/Content -->
+    <!---728x90--->
+    <script src='/publisher.eboundservices.com/dynamicAds/dynamicScript.js'></script>
+    <!-- footer -->
+    <div class="footer">
+        <h2>
+            &copy; 2018 Photography Form. All rights reserved | Design by
+            <a href="http://w3layouts.com">W3layouts</a>
+        </h2>
+    </div>
+    <!-- //footer -->
+    <!---728x90--->
+    <script src='/publisher.eboundservices.com/dynamicAds/dynamicScript.js'></script>
+    <!-- js -->
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <!-- date-->
+    <link rel="stylesheet" href="~/Content/jquery-ui.css" />
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <!-- //date -->
+    <!-- time -->
+    <script src="~/Scripts/wickedpicker.js"></script>
+    <link href="~/Content/wickedpicker.css" rel="stylesheet" type='text/css' media="all" />
+    <!-- //time -->
+
+</body>
+
+</html>
+
