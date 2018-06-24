@@ -42,7 +42,14 @@
                                 @item.PASS
                             </td>
                             <td>
+                                @if (item.THONGTINCANHAN != null)
+                                {
                                 @item.THONGTINCANHAN.HO @item.THONGTINCANHAN.TEN 
+                                }
+                                else
+                                {
+                                    <h6 style="color:red">Chưa cập nhật</h6>
+                                }
                             </td>
                             <td>
                                 <a href="@Url.Action("ChiTietCN","Admin",new { id = @item.MATKCN })">Chi Tiết</a> |

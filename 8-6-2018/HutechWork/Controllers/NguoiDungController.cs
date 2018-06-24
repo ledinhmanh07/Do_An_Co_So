@@ -41,7 +41,7 @@ namespace HutechWork.Controllers
                     if(tk != null)
                     {
                         Session["TaikhoanCN"] = tk.MATKCN;
-                        THONGTINCANHAN cn = db.THONGTINCANHANs.SingleOrDefault(a => a.MATKCN.ToString() == tendn.ToString());
+                        THONGTINCANHAN cn = db.THONGTINCANHANs.SingleOrDefault(a => a.MATKCN == tk.MATKCN);
                         if (cn != null)
                         {
                             return RedirectToAction("Index", "TrangChu");

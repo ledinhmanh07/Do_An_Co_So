@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using HutechWork.Models;
 using System.Text.RegularExpressions;
+using PagedList;
 
 namespace HutechWork.Controllers
 {
@@ -19,14 +20,16 @@ namespace HutechWork.Controllers
                 return false;
             return true;
         }
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
+            int pageSize = 8;
+            int pageNum = (page ?? 1);
             if (Session["ADMIN"] == null)
             {
                 return RedirectToAction("DangNhap", "Admin");
             }
             var a = db.CHITIETTUYENDUNGs.Where(n => n.TINHTRANG == false).ToList();
-            return View(a);
+            return View(a.ToPagedList(pageNum, pageSize));
         }
         public ActionResult ChiTiet(int id)
         {

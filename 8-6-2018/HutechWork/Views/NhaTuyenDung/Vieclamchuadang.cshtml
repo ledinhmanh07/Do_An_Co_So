@@ -1,0 +1,34 @@
+﻿
+<h2 style="text-align:center">Chưa được đăng</h2>
+@foreach (var item in Model)
+{
+        <a href="@Url.Action("ChiTietDT", "NhaTuyenDung", new { id = item.MAPDT })" class="item-click">
+            <article>
+                <div class="brows-job-list" style="background-color:white">
+                    <div class="col-md-1 col-sm-2 small-padding" style="padding-top:20px">
+                        <div class="brows-job-company-img">
+                            <img src="~/img/@item.TAIKHOAN_DN.TTDOANHNGHIEP.LOGO" class="img-responsive" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-5">
+                        <div class="brows-job-position">
+                            <h3>@item.CHITIETTUYENDUNG.TIEUDE</h3>
+                            <h5 style="padding-top:0px">@item.TAIKHOAN_DN.TTDOANHNGHIEP.TENDN</h5>
+                            <p><span>@item.CHITIETTUYENDUNG.NGANH.TENNGANH</span><span class="brows-job-sallery"><i class="fa fa-money"></i>@String.Format("{0:0,0}", item.CHITIETTUYENDUNG.MUCLUONGTOITHIEU) - @String.Format("{0:0,0}", item.CHITIETTUYENDUNG.MUCLUONGTOIDA) VND</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <div class="brows-job-location">
+                            <p><i class="fa fa-map-marker"></i>@item.CHITIETTUYENDUNG.DIACHILAMVIEC - @item.CHITIETTUYENDUNG.THANHPHO.TENTHANHPHO </p>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <div class="brows-job-location">
+                            <span><p>Ngày đăng:</p><p>@String.Format("{0:dd/MM/yyyy}", item.NGAYDANGTIN)</p></span>
+                        </div>
+                    </div>
+                <span class="tg-themetag tg-featuretag">Chưa được đăng</span>
+                </div>
+            </article>
+        </a>
+}

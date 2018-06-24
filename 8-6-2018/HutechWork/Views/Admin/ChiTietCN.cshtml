@@ -31,10 +31,11 @@
         <dd>
             @Html.DisplayFor(model => model.PASS)
         </dd>
+        @if (Model.THONGTINCANHAN != null)
+        {
         <dt>
             Họ Tên
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.THONGTINCANHAN.HO) @Html.DisplayFor(model => model.THONGTINCANHAN.TEN)
         </dd>
@@ -73,6 +74,7 @@
         <dd>
             <img src="~/img/@Model.THONGTINCANHAN.HINHDD" />
         </dd>
+        }
     </dl>
 </div>
 <p>

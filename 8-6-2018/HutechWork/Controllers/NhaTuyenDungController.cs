@@ -381,17 +381,28 @@ namespace HutechWork.Controllers
             {
                 return RedirectToAction("DangNhap", "NhaTuyenDung");
             }
-            List<PHIEUDANGTUYEN> ct = db.PHIEUDANGTUYENs.OrderByDescending(a => a.NGAYDANGTIN).Where(b=>b.MATKDN.ToString()== Session["TaikhoanDN"].ToString()).Take(4).ToList();
+            List<PHIEUDANGTUYEN> ct = db.PHIEUDANGTUYENs.OrderByDescending(a => a.NGAYDANGTIN).Where(b => b.MATKDN.ToString() == Session["TaikhoanDN"].ToString() && b.CHITIETTUYENDUNG.TINHTRANG == true).ToList();
             return PartialView(ct);
         }
-        public ActionResult Hosoxettuyen()
+        public ActionResult Vieclamchuadang()
         {
             if (Session["TaikhoanDN"] == null)
             {
                 return RedirectToAction("DangNhap", "NhaTuyenDung");
             }
+            List<PHIEUDANGTUYEN> ct = db.PHIEUDANGTUYENs.OrderByDescending(a => a.NGAYDANGTIN).Where(b => b.MATKDN.ToString() == Session["TaikhoanDN"].ToString() && b.CHITIETTUYENDUNG.TINHTRANG == false).ToList();
+            return PartialView(ct);
+        }
+        public ActionResult Hosoxettuyen(int? page)
+        {
+            int pageSize = 8;
+            int pageNum = (page ?? 1);
+            if (Session["TaikhoanDN"] == null)
+            {
+                return RedirectToAction("DangNhap", "NhaTuyenDung");
+            }
             var ds = db.NOPDONs.OrderByDescending(a => a.NGAYNOPDON).Where(b => b.PHIEUDANGTUYEN.MATKDN.ToString() == Session["TaikhoanDN"].ToString()).ToList();                
-            return View(ds);
+            return View(ds.ToPagedList(pageNum, pageSize));
         }
         public ActionResult ChiTietDT(int id)
         {

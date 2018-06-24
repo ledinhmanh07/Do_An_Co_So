@@ -1,4 +1,6 @@
-﻿
+﻿@using HutechWork.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<NOPDON>
 @{
     ViewBag.Title = "Hosoxettuyen";
     Layout = "~/Views/Shared/_LayoutNhaTuyenDung.cshtml";
@@ -41,7 +43,12 @@
                                 </div>
                             </article>
                         </a>
-                    }                    
+                    }   
+                    <div class="row">
+                        <ul class="pagination">
+                            @Html.PagedListPager(Model, page => Url.Action("Hosoxettuyen", new { page = page }))
+                        </ul>
+                    </div>                 
                     </div>
                 </div>
             </div>
