@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/LayoutDangNhap_DangKy.cshtml";
+}
+@using (Html.BeginForm())
+{
+<div class="wrapper">
+    <section class="login-screen-sec">
+        <div class="container">
+            <div class="login-screen">
+                <a href="/TrangChu/Index">
+                    <img style="height:100px" src="~/img/Logo_HUTECH.jpg" class="img-responsive" alt="">
+                </a>
+                <form>
+                    <input name="Tendn" type="text" class="form-control" placeholder="Tên đăng nhập">
+                    <h5 style="padding-left:20px;color:red" class="col-md-10">@ViewData["Loi3"]</h5>
+                    <input name="Matkhau" type="password" class="form-control" placeholder="Mật khẩu">
+                    <h5 style="padding-left:20px;color:red" class="col-md-10">@ViewData["Loi4"]</h5>
+                    <input name="Nhaplaimatkhau" type="password" class="form-control" placeholder="Nhập lại mật khẩu">
+                    <h5 style="padding-left:20px;color:red" class="col-md-10">@ViewData["Loi5"]</h5>
+                    <button class="btn btn-login" type="submit">Đăng Ký</button>
+                    <span>Đã có tài khoản? <a href="/NguoiDung/DangNhap"> Đăng Nhập</a></span>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootsnav.js"></script>
+    <script src="~/Scripts/viewportchecker.js"></script>
+    <script src="~/Scripts/bootstrap-select.min.js"></script>
+    <script src="~/Scripts/wysihtml5-0.3.0.js"></script>
+    <script src="~/Scripts/bootstrap-wysihtml5.js"></script>
+    <script src="~/Scripts/jQuery.style.switcher.js"></script>
+    <script type="text/javascript" src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+    <script type="text/javascript">$(document).ready(function(){$('#styleOptions').styleSwitcher();});</script>
+    <script>function openRightMenu(){document.getElementById("rightMenu").style.display="block";}function closeRightMenu(){document.getElementById("rightMenu").style.display="none";}</script>
+</div>
+}
