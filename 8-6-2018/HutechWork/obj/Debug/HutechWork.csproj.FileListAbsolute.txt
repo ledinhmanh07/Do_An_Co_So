@@ -878,17 +878,17 @@ C:\Users\sony\Desktop\Đồ Án Cơ Sở\8-6-2018\HutechWork\obj\Debug\HutechWor
 C:\Users\sony\Desktop\Đồ Án Cơ Sở\8-6-2018\HutechWork\obj\Debug\HutechWork.csproj.CopyComplete
 C:\Users\sony\Desktop\Đồ Án Cơ Sở\8-6-2018\HutechWork\obj\Debug\HutechWork.dll
 C:\Users\sony\Desktop\Đồ Án Cơ Sở\8-6-2018\HutechWork\obj\Debug\HutechWork.pdb
+C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\roslyn\VBCSCompiler.exe
 C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\roslyn\csc.exe
 C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\roslyn\Microsoft.CSharp.Core.targets
 C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\roslyn\System.Collections.Immutable.dll
 C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\roslyn\vbc.exe
-C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\roslyn\VBCSCompiler.exe
 C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\HutechWork.dll.config
 C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\HutechWork.dll
@@ -950,3 +950,4 @@ C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Bao\Desktop\8-6-2018\HutechWork\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Bao\Desktop\8-6-2018\HutechWork\obj\Debug\HutechWork.dll
 C:\Users\Bao\Desktop\8-6-2018\HutechWork\obj\Debug\HutechWork.pdb
+C:\Users\Bao\Desktop\8-6-2018\HutechWork\obj\Debug\HutechWork.csprojResolveAssemblyReference.cache

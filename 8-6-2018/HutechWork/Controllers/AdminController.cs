@@ -20,16 +20,14 @@ namespace HutechWork.Controllers
                 return false;
             return true;
         }
-        public ActionResult Index(int? page)
+        public ActionResult Index()
         {
-            int pageSize = 8;
-            int pageNum = (page ?? 1);
             if (Session["ADMIN"] == null)
             {
                 return RedirectToAction("DangNhap", "Admin");
             }
             var a = db.CHITIETTUYENDUNGs.Where(n => n.TINHTRANG == false).ToList();
-            return View(a.ToPagedList(pageNum, pageSize));
+            return View(a);
         }
         public ActionResult ChiTiet(int id)
         {
